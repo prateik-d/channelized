@@ -1,0 +1,18 @@
+.basic_layout .select2-container--default .select2-search--dropdown {
+    padding: 0px;
+    position: absolute;
+    bottom: 30px;
+}
+
+.basic_layout .select2-container--default .select2-search--dropdown:before {
+    content: "Other";
+    left: 0px;
+    font-size: 14px;
+    font-weight: 300;
+    height: 30px;
+}
+
+.basic_layout .select2-results {
+    display: block;
+    margin-bottom: 40px;
+}

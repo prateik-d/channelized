@@ -1,0 +1,15 @@
+@mixin box-shadow-light($position,$color ) {
+    -webkit-box-shadow:$position $color;
+    -moz-box-shadow:$position $color;
+    -o-box-shadow:$position $color;
+    box-shadow:$position $color;
+    
+}
+
+@mixin btn-shadow($position,$color ) {
+    -webkit-box-shadow:$position $color;
+    -moz-box-shadow:$position $color;
+    -o-box-shadow:$position $color;
+    box-shadow:$position $color;
+}
+

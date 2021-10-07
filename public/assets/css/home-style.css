@@ -1,0 +1,321 @@
+body.basic_layout.home-lt {
+    background: #ffffff;
+}
+
+.banner-main {
+    padding-bottom: 50px;
+}
+
+a.nav-item.nav-link {
+    color: #000 !important;
+    font-weight: 500;
+}
+
+.home-containt .heroText h1 {
+    font-size: 38px;
+    line-height: 60px;
+    font-weight: 600;
+    color: #412b20;
+}
+
+.bar-top {
+    margin-top: 50px;
+}
+
+.experience h4 {
+    font-size: 22px;
+    font-weight: 300;
+    line-height: 34px;
+}
+
+.experience strong {
+    color: #1b7f9d;
+    font-weight: 500;
+}
+
+.wh-bg {
+    background: #ffffff;
+}
+
+.wh-darks {
+    background: #F2F3F7;
+}
+
+.padtb-130 {
+    padding: 130px 0;
+}
+
+.vendors-icons {
+    float: left;
+    margin-right: 20px;
+    width: 26%;
+}
+
+.vendors-details {
+    float: left;
+    width: 80%;
+}
+
+.navbar-nav.ml-auto .btn-shadow {
+    padding: 8px 45px;
+}
+
+.vendors-det li {
+    float: left;
+    width: 50%;
+    padding: 0 15px;
+    margin: 0 0 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.vendors-details p {
+    font-size: 14px;
+}
+
+.vendors-det ul {
+    margin: 0;
+    padding: 0;
+}
+
+.even-icon {
+    float: left;
+    width: 10%;
+    margin-right: 12px;
+}
+
+.even-titld {
+    float: left;
+    width: 80%;
+}
+
+.even-titld h2 {
+    color: #312a20;
+    font-weight: 600;
+}
+
+.even-titld p {
+    font-size: 16px;
+}
+
+.card-pd0 .card {
+    margin: 0;
+    max-width: 100%;
+}
+
+.admin-main-outer .admin-container-main .event-list-main.even-hom-full {
+    width: 100%;
+}
+
+.grid-btn.active {
+    background: #e86a6a !important;
+    border: none;
+}
+
+.full-cards .card-body {
+    width: 210px;
+    float: left;
+    margin-right: 10px;
+}
+
+.full-cards .card-bgimg {
+    height: 200px;
+    width: 200px;
+}
+
+.card-bgimg {
+    height: 200px;
+    width: 100%;
+    background-position: 50% 25%!important;
+    background-size: cover!important;
+    transition-duration: 500ms;
+    transition-property: width, height;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+.card-event-dets p {
+    font-size: 9px;
+    font-weight: 300;
+    line-height: 14px;
+    color: #838383;
+    letter-spacing: 0;
+}
+
+.full-cards .card-ft {
+    float: left;
+    margin-left: 10px;
+    width: 58%;
+}
+
+.admin-container-main {
+    -webkit-transition: all .5s ease-in-out;
+    transition: all .5s ease-in-out;
+}
+
+.full-cards.event-crd .card {
+    width: 100%;
+    max-width: 98%;
+}
+
+.logins-screen .getStarted-right .getStarted-right-action {
+    margin-right: 0;
+    float: right;
+}
+
+.main-container.logins-screen .row {
+    width: 100%;
+}
+
+.event-details {
+    padding: 30px 0;
+}
+
+.event-details h2 {
+    font-size: 20px;
+    font-weight: 600;
+    margin: 20px 0;
+}
+
+.event-details p {
+    font-size: 16px;
+    line-height: 20px;
+    margin-bottom: 20px;
+}
+
+.loc-event h4 {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.loc-event p {
+    font-size: 14px;
+    padding-top: 10px;
+    color: #867e7e;
+}
+
+.solu-tag h4 {
+    font-size: 18px;
+}
+
+.solu-det p {
+    font-size: 16px;
+}
+
+.wh-c {
+    background-color: #ffffff;
+}
+
+@media (min-width: 1440px) {
+    .event-crd .card {
+        width: calc(100% / 3 - 35px);
+        max-width: inherit;
+    }
+}
+
+@media (max-width: 767px) {
+    .bar-top {
+        margin-top: 0;
+    }
+    .home-containt .heroText h1 {
+        font-size: 28px;
+        line-height: 40px;
+    }
+    .home-containt .heroBtn {
+        margin: 40px 0;
+    }
+    .vendors-det li {
+        width: 100%;
+    }
+    .vendors-det {
+        margin-top: 30px;
+    }
+    .padtb-130 {
+        padding: 50px 0;
+    }
+    .card-pd0 .card {
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+    .full-cards .card-body {
+        width: 100%;
+    }
+    .full-cards .card-ft {
+        width: 100%;
+        float: left;
+    }
+    .full-cards .card-bgimg {
+        height: 100px;
+        width: 100px;
+    }
+    .card-list .card {
+        max-width: 100%;
+        margin: 0px 0px 15px 0px;
+        width: 98%;
+    }
+}
+
+@media (min-width: 991px) {
+    .menu-icon {
+        width: 68px;
+        height: 55px;
+        background-repeat: no-repeat !important;
+        background-position: center center !important;
+        margin: 4px 0px;
+        float: right;
+        cursor: pointer;
+    }
+    .menu-hide aside {
+        width: 65px;
+    }
+    .menu-hide .admin-container-main {
+        float: left;
+        width: calc(100% - 50px);
+        margin-left: 50px;
+        padding: 0px 142px;
+    }
+    .menu-hide .side-menu-name {
+        opacity: 0;
+        -webkit-transition: all .5s ease-in-out;
+        transition: all .5s ease-in-out;
+    }
+    .menu-hide aside .side-menu ul li {
+        clear: both;
+    }
+    .menu-hide aside .side-menu ul li a {
+        border-radius: 10px;
+        padding: 10px;
+        -webkit-transition: all .5s ease-in-out;
+        transition: all .5s ease-in-out;
+        padding: 07px 10px 07px 10px;
+    }
+    .menu-hide aside {
+        -webkit-transition: all .5s ease-in-out;
+        transition: all .5s ease-in-out;
+        overflow: hidden;
+    }
+    .menu-hide path.a.chr {
+        opacity: 0;
+        -webkit-transition: all .5s ease-in-out;
+        transition: all .5s ease-in-out;
+    }
+    .menu-hide aside .logo {
+        padding-left: 20px;
+        -webkit-transition: all .5s ease-in-out;
+        transition: all .5s ease-in-out;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1280px) {
+    .full-cards .card-body {
+        width: 35%;
+    }
+    .full-cards .card-ft {
+        width: 48%;
+    }
+    .full-cards .card-bgimg {
+        height: 150px;
+        width: 151px;
+    }
+}

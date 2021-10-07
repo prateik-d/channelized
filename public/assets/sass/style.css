@@ -1,0 +1,472 @@
+.create-form .create-event-form-label {
+    width: 100%;
+}
+
+.event-add-form input {
+    min-height: 44px;
+}
+
+.create-form .create-event-form-input {
+    width: 100%;
+}
+
+.create-form input {
+    width: 100%;
+}
+
+.location-event input.btn.btn-light.btn-shadow.search {
+    text-align: left;
+}
+
+.location-event .search {
+    background: #fcfcfd url(../images/search.svg) no-repeat 97% center !important;
+    border: none;
+    box-shadow: none;
+}
+
+.create-form .create-event-form-row {
+    margin-top: 15px;
+}
+
+.event-dropcreate {
+    float: left;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 15px;
+    padding: 10px;
+    width: 100%;
+    border: none;
+    box-shadow: none
+}
+
+.create-form span.select2.select2-container.select2-container--default {
+    width: 100% !important;
+}
+
+
+/* .create-form span.select2-selection.select2-selection--single {
+    padding: 5px 10px;
+} */
+
+.create-form textarea {
+    background: rgba(255, 255, 255, 0.8);
+    border: transparent;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 15px;
+    padding: 20px;
+    width: 100%;
+}
+
+.even-hostbtn {
+    color: #5A9BC7;
+    font-size: 14px;
+    padding: 8px 20px;
+}
+
+.evnt-or {
+    text-align: center;
+    display: table;
+    margin: 0 auto;
+    padding-top: 6px;
+}
+
+.upload-btn-wrapper {
+    position: relative;
+    overflow: inherit;
+    display: inline-block;
+}
+
+.upload-btn-wrapper .file-btn {
+    border: 2px solid gray;
+    color: gray;
+    background-color: white;
+    padding: 8px 20px;
+    border-radius: 8px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.upload-btn-wrapper input[type=file] {
+    font-size: 14px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    height: 70px;
+    cursor: pointer;
+}
+
+.upload-txt {
+    float: left;
+    text-align: left;
+}
+
+.upload-img {
+    float: left;
+}
+
+.upload-txt p {
+    margin: 0;
+    margin-left: 20px;
+    font-weight: lighter;
+}
+
+.upl-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    background: #f6f6f7;
+    padding: 10px 25px;
+}
+
+.event-check {
+    display: block;
+    position: relative;
+    padding-left: 50px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 16px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    font-weight: lighter
+}
+
+
+/* Hide the browser's default checkbox */
+
+.event-check input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+
+/* Create a custom checkbox */
+
+.checkmarkevnt {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    border: 2px solid #f4f4f4;
+    box-shadow: 1px 1px 4px 1px #00000026;
+    background-color: #fff;
+    border-radius: 6px
+}
+
+
+/* On mouse-over, add a grey background color */
+
+.event-check:hover input~.checkmarkevnt {
+    background-color: #fff;
+}
+
+
+/* When the checkbox is checked, add a blue background */
+
+.event-check input:checked~.checkmarkevnt {
+    background-color: #5fa3ce;
+}
+
+
+/* Create the checkmark/indicator (hidden when not checked) */
+
+.checkmarkevnt:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+
+/* Show the checkmark when checked */
+
+.event-check input:checked~.checkmarkevnt:after {
+    display: block;
+}
+
+
+/* Style the checkmark/indicator */
+
+.event-check .checkmarkevnt:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid #fff;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.col-md-8.event-filepad {
+    display: table;
+    width: 100%;
+    margin-bottom: 50px;
+}
+
+.event-subsv-btn a {
+    margin-right: 25px;
+}
+
+.ev-savbtn {
+    color: #5A9BC7;
+    font-weight: 500;
+}
+
+.event-sabbtn {
+    background: #5A9BC7;
+    border-color: #5A9BC7;
+}
+
+.input-240 {
+    width: 240px !important;
+}
+
+.create-event-form-input input.input-120 {
+    width: 120px !important;
+}
+
+.create-event-form-input .input-50 {
+    width: 70px !important;
+    float: left;
+    font-size: 22px;
+    font-weight: 500;
+    text-align: center;
+    line-height: 35px;
+}
+
+.plusevent-btn a:hover {
+    text-decoration: none;
+}
+
+.input-50.mr-1.ml-1.plusevent-btn a {
+    color: #5A9BC7;
+    margin-right: 8px;
+}
+
+.evdate ::-webkit-inner-spin-button,
+.evdate ::-webkit-calendar-picker-indicator {
+    -webkit-appearance: none;
+}
+
+.creat-box a {
+    font-size: 12.3px;
+    padding: 5px 10px;
+}
+
+.select2-container--default .select2-search--dropdown {
+    padding: 0px;
+    position: initial;
+    bottom: 0;
+    padding-bottom: 10px;
+}
+
+.select2-container--default .select2-search--dropdown:before {
+    content: "Other";
+    left: 0px;
+    font-size: 14px;
+    font-weight: 300;
+    height: 30px;
+    display: none;
+}
+
+.select2-results {
+    display: block;
+    margin-bottom: 0;
+}
+
+.select2-container--default .select2-search--dropdown .select2-search__field {
+    margin-left: 0;
+    width: 100%;
+}
+
+span.select2-selection__clear {
+    display: none;
+}
+
+
+/* ===============scroll-csss====================== */
+
+.scrollbar {
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+
+/* customize scrollbar css */
+
+#scrollbar-custom::-webkit-scrollbar {
+    width: 8px;
+    background-color: #9bc7e3;
+}
+
+#scrollbar-custom::-webkit-scrollbar:horizontal {
+    height: 8px;
+}
+
+#scrollbar-custom::-webkit-scrollbar-track {
+    border: 1px #5fa3ce solid;
+    border-radius: 8px;
+    -webkit-box-shadow: 0 0 6px #5fa3ce inset;
+}
+
+#scrollbar-custom::-webkit-scrollbar-thumb {
+    background-color: #e86a6a;
+    border: 1px solid #e86a6a;
+    border-radius: 8px;
+}
+
+#scrollbar-custombox::-webkit-scrollbar {
+    width: 8px;
+    background-color: #fff;
+}
+
+#scrollbar-custombox::-webkit-scrollbar:horizontal {
+    height: 8px;
+}
+
+#scrollbar-custombox::-webkit-scrollbar-track {
+    border: 1px #fff solid;
+    border-radius: 8px;
+    -webkit-box-shadow: 0 0 6px #fff inset;
+}
+
+#scrollbar-custombox::-webkit-scrollbar-thumb {
+    background-color: #e86a6a;
+    border: 1px solid #e86a6a;
+    border-radius: 8px;
+}
+
+.create-location-form-input .input-50 {
+    float: left;
+    font-size: 22px;
+    font-weight: 500;
+    text-align: center;
+    line-height: 35px;
+}
+
+.month-event input {
+    padding: 6px 22px;
+    position: relative;
+    -webkit-box-shadow: 1px 1px 0px 1px rgba(141, 141, 141, 0.2);
+    -o-box-shadow: 1px 1px 0px 1px rgba(141, 141, 141, 0.2);
+    box-shadow: 1px 1px 0px 1px rgba(141, 141, 141, 0.2);
+    border: none;
+    height: 46px;
+    background: #f2f3f7 !important;
+    border-top: 2px solid #fff;
+    border-left: 2px solid #fff;
+}
+
+.month-event span.inp-arrow {
+    background: url(/public/assets/images/filter-down-arrow.svg);
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    right: 8px;
+    top: 19px;
+    z-index: 111;
+    background-repeat: no-repeat;
+}
+
+ul.ui-timepicker-viewport li a {
+    font-size: 14px;
+    text-align: left;
+}
+
+.month-event input.daterange.form-control:focus {
+    -webkit-box-shadow: inset 1px 1px 4px #909193, 2px 1px 2px #fff !important;
+    box-shadow: inset 1px 1px 4px #909193, 2px 1px 2px #fff !important;
+    border: none;
+}
+
+.card {
+    width: 300px;
+}
+
+
+/* ===============select-scroll====================== */
+
+.select2-container--open .select2-dropdown--below,
+.select2-container--open .select2-dropdown--above {
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.select2-container--default .select2-results>.select2-results__options {
+    max-height: 200px;
+}
+
+span.select2-dropdown.filterDropdown.select2-dropdown--above {
+    min-height: 200px;
+    overflow-y: auto;
+}
+
+.star-icon.event-shortlist.btn.btn-shadow.btn-shortcolor {
+    background: #e86a6a;
+}
+
+.dashbord-menu {
+    padding: 0;
+    background: #4697af;
+}
+
+.dashbord-menu a {
+    color: #ffffff;
+    border-bottom: 1px solid #fff;
+}
+
+.dashbord-menu a:last-child {
+    border: none;
+}
+
+.create-event-form-row .row {
+    clear: both;
+}
+
+
+/* ===============scroll-csss====================== */
+
+@media (max-width: 1366px) {
+    .select2-dropdown {
+        padding: 15px;
+    }
+    .select2-results__option {
+        padding: 10px 0px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .upload-btn-wrapper {
+        margin: 10px 0;
+    }
+    .event-agenda .create-event-form-input input.input-120 {
+        width: 100% !important;
+    }
+    .event-agenda .input-18.mr-1.ml-1 {
+        display: none;
+    }
+    .event-agenda input {
+        margin: 10px 0;
+    }
+    .input-240 {
+        width: 100% !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .event-add-form .create-form .create-event-form-input {
+        margin-bottom: 15px;
+    }
+}

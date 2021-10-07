@@ -1,0 +1,10 @@
+@import "variable";
+@import "mixins";
+
+
+@import "plugins/bootstrap/bootstrap.scss";
+@import "plugins/scroll/slimscroll";
+@import "plugins/select2/core.scss";
+@import "header";
+@import "aside";
+@import "custom";

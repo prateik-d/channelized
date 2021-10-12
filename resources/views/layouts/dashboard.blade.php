@@ -282,6 +282,13 @@
                                 <div class="side-menu-name">Users</div>
                             </a>
                         </li>
+                        <li class="nav-item">
+                            <a href="{{ route(Auth::user()->roles[0]->name.'.templatePage') }}" class="{{ (request()->routeIs('admin.templatePage*') ? 'active' : '') }}">
+                                <i class="side-menu-icon event-icon"> </i>
+                                <div class="side-menu-name">Templates</div>
+
+                            </a>
+                        </li>
                     @endhasrole
                 @endguest
             </ul>

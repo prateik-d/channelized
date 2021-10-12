@@ -19,6 +19,10 @@ class TemplatePage extends Model
     protected $fillable = [
         'title',
         'content',
+        'page_title',
+        'page_content',
+        'page_logo',
+        'page_desc',
         'owner',
         'created_by',
         'deleted',

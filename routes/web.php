@@ -71,9 +71,15 @@ Route::prefix('admin')->middleware(['auth','auth.admin'])->name('admin.')->group
     Route::put('users/update/{uid}', 'UserController@update')->name('users.update');
     Route::get('user/profile','UserController@userProfile')->name('user.profile');
     
-    // Route::get('template','TemplatePageController')->name('templatePage');
-    // Route::get('template', [TemplatePageController::class, 'index']);
-    Route::get('template', 'TemplatePageController@index')->name('home');
+    Route::get('template', 'TemplatePageController@index')->name('templatePage');
+    Route::get('template/create', 'TemplatePageController@create')->name('templatePage.create');
+    Route::post('template/create', 'TemplatePageController@create')->name('templatePage.create');
+    Route::get('template/view/{id}', 'TemplatePageController@show')->name('templatePage.show');
+    Route::get('template/edit/{uid}', 'TemplatePageController@edit')->name('templatePage.edit');
+    Route::post('template/update', 'TemplatePageController@update')->name('templatePage.update');
+    Route::get('template/delete/{id}', 'TemplatePageController@destroy')->name('templatePage.delete');
+    Route::get('template/deleted/', 'TemplatePageController@deleted')->name('templatePage.deleted');
+    Route::get('template/restore/{id}', 'TemplatePageController@restore')->name('templatePage.restore');
 });
 
 Route::post('events/{event}','EventController@partner_event_readmore')->name('events.readmore');

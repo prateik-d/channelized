@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\TemplatePage;
+use App\PageTemplateUser;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\File;
 
 
 class TemplatePageController extends Controller
@@ -19,6 +21,22 @@ class TemplatePageController extends Controller
         $templatePage = TemplatePage::where("deleted", '=', '0')->get();
 
         return view('admin.template_page.index', compact('templatePage'));
+    }  
+    
+    public function vendor_index()
+    {
+        $templatePage = TemplatePage::where("deleted", '=', '0')->get();
+        $templatePageUser = PageTemplateUser::where("deleted", '=', '0')->get();
+
+        return view('vendor.template_page.index', compact('templatePage', 'templatePageUser'));
+    }  
+
+    public function partner_index()
+    {
+        $templatePage = TemplatePage::where("deleted", '=', '0')->get();
+        $templatePageUser = PageTemplateUser::where("deleted", '=', '0')->get();
+
+        return view('partner.template_page.index', compact('templatePage', 'templatePageUser'));
     }  
 
     public function deleted()
@@ -55,7 +73,6 @@ class TemplatePageController extends Controller
             {
                 $allowedfileExtension=['jpg','jpeg','png', 'svg'];
                 $file = $request->file('page_logo');
-                // $filename = $file->getClientOriginalName();
                 $destinationPath = public_path().'/uploads/templates/' ;
                 
                 $extension = $file->getClientOriginalExtension();
@@ -135,6 +152,40 @@ class TemplatePageController extends Controller
 
         return view('admin.template_page.view', compact('id', 'content'));
     }
+    
+    public function vendor_show(TemplatePage $templatePage)
+    {
+        
+        $id = request()->segment(count(request()->segments()));
+
+        $data = TemplatePage::findOrFail($id);
+
+        $content = $data->content;
+
+
+        if (strpos($content, '$page_name') !== false) 
+        {
+            $content = str_replace("$page_name", $data->page_name, $content);
+        }
+
+        if (strpos($content, '$page_title') !== false) 
+        {
+            $content = str_replace("$page_title", $data->page_title, $content);
+        }
+
+        if (strpos($content, '$page_logo') !== false) 
+        {
+            $content = str_replace("$page_logo", $data->page_logo, $content);
+        }
+
+        if (strpos($content, '$page_desc') !== false) 
+        {
+            $content = str_replace("$page_desc", $data->page_desc, $content);
+        }
+
+
+        return view('vendor.template_page.view', compact('id', 'content'));
+    }
 
     /**
      * Show the form for editing the specified resource.
@@ -148,10 +199,16 @@ class TemplatePageController extends Controller
 
         $templateData = TemplatePage::findOrFail($id);
 
-        // dd($templateData);
+        return view('admin.template_page.edit', compact('templateData'));        
+    }
 
-        return view('admin.template_page.edit', compact('templateData'));
-        
+    public function vendor_edit(TemplatePage $templatePage)
+    {
+        $id = request()->segment(count(request()->segments()));
+
+        $templateData = TemplatePage::find($id);
+
+        return view('vendor.template_page.edit', compact('templateData'));        
     }
 
     /**
@@ -164,23 +221,115 @@ class TemplatePageController extends Controller
     public function update(Request $request, TemplatePage $templatePage)
     {
         $data  = $request->input();
+        $user = Auth::user();
 
-        if(!empty($data['page_logo']))
-            $page_logo = $data['page_logo'];
+        // dd($data);
+
+        $id = $data['id'];
+
+        $templateData = TemplatePage::findOrFail($id);
+
+
+        if($request->hasFile('page_logo'))
+        {
+            $allowedfileExtension=['jpg','jpeg','png', 'svg'];
+            $file = $request->file('page_logo');
+            $destinationPath = public_path().'/uploads/templates/' ;
+            
+            $extension = $file->getClientOriginalExtension();
+            $filename = time().'.'.$extension;
+
+            $file->move($destinationPath,$filename);
+
+            File::delete($destinationPath.'/'.$templateData->page_logo);
+        }
         else
-            $page_logo ='';
+        {
 
-        if($page_logo)
-            print('1');
+            $filename = $templateData->page_logo;
+        }
+
+        try
+        {
+            
+
+            $template_Update = TemplatePage::where("id", $id)->
+                                                                update(
+                                                                [
+                                                                    "title" => $data['title'],
+                                                                    "content" => $data['content'],
+                                                                    "owner" => 'admin( '.$user->firstname .' ' .$user->lastname. ')',
+                                                                    "created_by" => $user->id,
+                                                                    "page_name" => $data['page_name'],
+                                                                    "page_title" => $data['page_title'],
+                                                                    "page_logo" => $filename,
+                                                                    "page_desc" => $data['page_desc']
+                                                                ]
+                                                            );
+
+            return redirect('admin/template')->with('status',"Update successfully");
+        }
+        catch(Exception $e)
+        {
+            // return back()->withInput()->with('failed',"operation failed");
+            // return redirect('admin/template/edit/')->with('failed',"operation failed");
+
+            return redirect()->route('admin/template/edit/', ['id' => $data['id']])->with('failed',"operation failed");
+        }
+    }
+
+    public function vendor_added(Request $request, TemplatePage $templatePage)
+    {
+        $data  = $request->input();
+        $user = Auth::user();
+
+
+        $id = $data['id'];
+
+        $templateData = TemplatePage::findOrFail($id);
+
+        // dd($user->firstname);
+
+
+        if($request->hasFile('page_logo'))
+        {
+            $allowedfileExtension=['jpg','jpeg','png', 'svg'];
+            $file = $request->file('page_logo');
+            $destinationPath = public_path().'/uploads/templates/' ;
+            
+            $extension = $file->getClientOriginalExtension();
+            $filename = time().'.'.$extension;
+
+            $file->move($destinationPath,$filename);
+
+            File::delete($destinationPath.'/'.$templateData->page_logo);
+        }
         else
-            print('0');
+        {
+            $filename = $templateData->page_logo;
+        }
 
-        die;
+        try
+        {
+            $template = new PageTemplateUser;
 
-        $templatePage->update($request->all());
-
-        return redirect('admin/template')->with('status',"Insert successfully");
-
+            $template->title = $data['title'];
+            $template->content = $data['content'];
+            $template->owner = 'vendor( '.$user->firstname .' ' .$user->lastname. ')' ;
+            $template->created_by = $user->id;
+            $template->deleted   = '0';
+            $template->page_name = $data['page_name'];
+            $template->page_title = $data['page_title'];
+            $template->page_logo = $filename;
+            $template->page_desc = $data['page_desc'];
+            
+            $template->save();
+            return redirect('vendor/template')->with('status',"Updated successfully");
+        }
+        catch(Exception $e)
+        {
+            return redirect('admin/template/create')->with('failed',"operation failed");
+        }
     }
 
     /**

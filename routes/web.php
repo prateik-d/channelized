@@ -71,15 +71,18 @@ Route::prefix('admin')->middleware(['auth','auth.admin'])->name('admin.')->group
     Route::put('users/update/{uid}', 'UserController@update')->name('users.update');
     Route::get('user/profile','UserController@userProfile')->name('user.profile');
     
-    Route::get('template', 'TemplatePageController@index')->name('templatePage');
-    Route::get('template/create', 'TemplatePageController@create')->name('templatePage.create');
-    Route::post('template/create', 'TemplatePageController@create')->name('templatePage.create');
-    Route::get('template/view/{id}', 'TemplatePageController@show')->name('templatePage.show');
-    Route::get('template/edit/{uid}', 'TemplatePageController@edit')->name('templatePage.edit');
-    Route::post('template/update', 'TemplatePageController@update')->name('templatePage.update');
-    Route::get('template/delete/{id}', 'TemplatePageController@destroy')->name('templatePage.delete');
-    Route::get('template/deleted/', 'TemplatePageController@deleted')->name('templatePage.deleted');
-    Route::get('template/restore/{id}', 'TemplatePageController@restore')->name('templatePage.restore');
+    Route::get('template', 'PageTemplateController@index')->name('templatePage');
+    Route::get('template/deactivate/{id}', 'PageTemplateController@deactivate')->name('templatePage.deactivate');
+    Route::get('template/inactivate/{id}', 'PageTemplateController@inactivate')->name('templatePage.inactivate');
+    Route::get('template/deactivated/', 'PageTemplateController@deactivated')->name('templatePage.deactivated');
+    // Route::get('template/create', 'TemplatePageController@create')->name('templatePage.create');
+    // Route::post('template/create', 'TemplatePageController@create')->name('templatePage.create');
+    // Route::get('template/view/{id}', 'TemplatePageController@show')->name('templatePage.show');
+    // Route::get('template/edit/{uid}', 'TemplatePageController@edit')->name('templatePage.edit');
+    // Route::post('template/update', 'TemplatePageController@update')->name('templatePage.update');
+    // Route::get('template/delete/{id}', 'TemplatePageController@destroy')->name('templatePage.delete');
+    // Route::get('template/deleted/', 'TemplatePageController@deleted')->name('templatePage.deleted');
+    // Route::get('template/restore/{id}', 'TemplatePageController@restore')->name('templatePage.restore');
 });
 
 Route::post('events/{event}','EventController@partner_event_readmore')->name('events.readmore');
@@ -142,4 +145,14 @@ Route::prefix('vendor')->middleware(['auth','auth.vendor'])->name('vendor.')->gr
     Route::get('event/profile/{id}','EventController@vendor_event_profile')->name('event.profile');
     Route::get('user/profile','UserController@userProfile')->name('user.profile');
     Route::put('user/update', 'UserController@update')->name('user.update');
+
+    Route::get('template', 'PageTemplateController@vendor_index')->name('VtemplatePage');
+    Route::post('template/added', 'PageTemplateController@vendor_added')->name('vtemplatePage.added');
+    Route::get('template/create/{id}', 'PageTemplateController@vendor_create')->name('vtemplatePage.create');
+    Route::get('template/view/{id}', 'PageTemplateController@vendor_show')->name('vtemplatePage.show');
+    // Route::get('template/edit/{uid}', 'TemplatePageController@vendor_edit')->name('vtemplatePage.edit');
+    // Route::get('template/create', 'TemplatePageController@create')->name('templatePage.create');
+    // Route::post('template/create', 'TemplatePageController@create')->name('templatePage.create');
+
+
 });

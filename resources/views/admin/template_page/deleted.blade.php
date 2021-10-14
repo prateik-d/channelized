@@ -59,8 +59,8 @@
       -o-transition: all 0.2s ease-in;
       transition: all 0.2s ease-in;
       box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.40);
-      min-height: 100px!important;
-      max-height: 100px!important;
+      min-height: 125px!important;
+      max-height: 125px!important;
     }
     #cards_landscape_wrap-2 .card-flyer:hover{
       background: #fff;
@@ -135,11 +135,18 @@
 
                                         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                                             
-                                            <a class="dropdown-item" data-toggle="modal" data-target="#deleteModal">
+                                            <!-- <a class="dropdown-item" data-toggle="modal" data-target="#deleteModal">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-recycle" viewBox="0 0 16 16">
                                                     <path d="M9.302 1.256a1.5 1.5 0 0 0-2.604 0l-1.704 2.98a.5.5 0 0 0 .869.497l1.703-2.981a.5.5 0 0 1 .868 0l2.54 4.444-1.256-.337a.5.5 0 1 0-.26.966l2.415.647a.5.5 0 0 0 .613-.353l.647-2.415a.5.5 0 1 0-.966-.259l-.333 1.242-2.532-4.431zM2.973 7.773l-1.255.337a.5.5 0 1 1-.26-.966l2.416-.647a.5.5 0 0 1 .612.353l.647 2.415a.5.5 0 0 1-.966.259l-.333-1.242-2.545 4.454a.5.5 0 0 0 .434.748H5a.5.5 0 0 1 0 1H1.723A1.5 1.5 0 0 1 .421 12.24l2.552-4.467zm10.89 1.463a.5.5 0 1 0-.868.496l1.716 3.004a.5.5 0 0 1-.434.748h-5.57l.647-.646a.5.5 0 1 0-.708-.707l-1.5 1.5a.498.498 0 0 0 0 .707l1.5 1.5a.5.5 0 1 0 .708-.707l-.647-.647h5.57a1.5 1.5 0 0 0 1.302-2.244l-1.716-3.004z"/>
                                                 </svg> 
                                                 Restore
+                                            </a> -->
+
+                                            <a class="dropdown-item" data-toggle="modal" data-target="#deleteModal">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-lightbulb-fill" viewBox="0 0 16 16">
+                                                  <path d="M2 6a6 6 0 1 1 10.174 4.31c-.203.196-.359.4-.453.619l-.762 1.769A.5.5 0 0 1 10.5 13h-5a.5.5 0 0 1-.46-.302l-.761-1.77a1.964 1.964 0 0 0-.453-.618A5.984 5.984 0 0 1 2 6zm3 8.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1l-.224.447a1 1 0 0 1-.894.553H6.618a1 1 0 0 1-.894-.553L5.5 15a.5.5 0 0 1-.5-.5z"/>
+                                                </svg>
+                                                Inactive
                                             </a>
                                         </div>
                                         <div id="deleteModal" class="modal fade" role="dialog">
@@ -148,14 +155,14 @@
                                                 <!-- Modal content-->
                                                 <div class="modal-content">
                                                     <div class="modal-header">
-                                                        <h4 class="modal-title">Restore Page Template</h4>
+                                                        <h4 class="modal-title">Inactive Page Template</h4>
                                                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                                                     </div>
                                                     <div class="modal-body">
-                                                        <p>Do you really want to restore this template ?</p>
+                                                        <p>Do you really want to inactive this template ?</p>
                                                     </div>
                                                     <div class="modal-footer">
-                                                        <a href="restore/{{ $data->id }}">Yes</a>
+                                                        <a href="inactivate/{{ $data->id }}">Yes</a>
                                                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                                                     </div>
                                                 </div>
@@ -164,8 +171,8 @@
                                         </div>
                                     </div>
                                     <div class="text-container">
-                                        <h6>Title : {{ $data->title }}</h6>
-                                        <p>Page :  {{ $data->page_name }}</p>
+                                        <h6>Page : {{ ucfirst(trans($data->name)) }}</h6>
+                                        <p><a href="{{ url($data->filepath) }}" target="_blank">view</a></p>
                                     </div>
                                 </div>
                             </div>

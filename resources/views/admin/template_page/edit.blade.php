@@ -25,6 +25,7 @@
 
         <form action="{{ action('TemplatePageController@update') }}" method="POST" class="" enctype="multipart/form-data">
             <input name="_token" type="hidden" value="{{ csrf_token() }}"/>
+            <input name="id" type="hidden" value="{{ $templateData->id }}"/>
             <div class="form-group">
                 <label for="title">Title</label>
                 <input type="text" class="form-control" id="title" name="title" placeholder="Enter Title" required="true" value="{{ $templateData->title }}">

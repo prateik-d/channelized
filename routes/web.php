@@ -124,6 +124,15 @@ Route::prefix('partner')->middleware(['auth','auth.partner'])->name('partner.')-
 
     Route::get('user/profile','UserController@userProfile')->name('user.profile');
     Route::put('user/update', 'UserController@update')->name('user.update');
+
+    Route::get('template', 'PageTemplateController@partner_index')->name('ptemplatePage');
+    Route::post('template/added', 'PageTemplateController@partner_added')->name('ptemplatePage.added');
+    Route::get('template/create/{id}', 'PageTemplateController@partner_create')->name('ptemplatePage.create');
+    Route::get('template/view/{id}', 'PageTemplateController@partner_show')->name('ptemplatePage.show');
+    Route::post('template/logo_upload', 'PageTemplateController@partner_logo_upload')->name('ptemplatePage.logo_upload');
+    Route::post('template/logo_upload_edit', 'PageTemplateController@partner_logo_upload_edit')->name('ptemplatePage.logo_upload_edit');
+    Route::get('template/edit/{uid}', 'PageTemplateController@partner_edit')->name('ptemplatePage.edit');
+    Route::post('template/edit', 'PageTemplateController@partner_update')->name('ptemplatePage.update');
 });
 
 Route::prefix('vendor')->middleware(['auth','auth.vendor'])->name('vendor.')->group(function(){
@@ -146,13 +155,13 @@ Route::prefix('vendor')->middleware(['auth','auth.vendor'])->name('vendor.')->gr
     Route::get('user/profile','UserController@userProfile')->name('user.profile');
     Route::put('user/update', 'UserController@update')->name('user.update');
 
-    Route::get('template', 'PageTemplateController@vendor_index')->name('VtemplatePage');
+    Route::get('template', 'PageTemplateController@vendor_index')->name('vtemplatePage');
     Route::post('template/added', 'PageTemplateController@vendor_added')->name('vtemplatePage.added');
     Route::get('template/create/{id}', 'PageTemplateController@vendor_create')->name('vtemplatePage.create');
     Route::get('template/view/{id}', 'PageTemplateController@vendor_show')->name('vtemplatePage.show');
-    // Route::get('template/edit/{uid}', 'TemplatePageController@vendor_edit')->name('vtemplatePage.edit');
-    // Route::get('template/create', 'TemplatePageController@create')->name('templatePage.create');
-    // Route::post('template/create', 'TemplatePageController@create')->name('templatePage.create');
-
-
+    Route::post('template/logo_upload', 'PageTemplateController@vendor_logo_upload')->name('vtemplatePage.logo_upload');
+    Route::post('template/logo_upload_edit', 'PageTemplateController@vendor_logo_upload_edit')->name('vtemplatePage.logo_upload_edit');
+    Route::get('template/edit/{uid}', 'PageTemplateController@vendor_edit')->name('vtemplatePage.edit');
+    Route::post('template/edit', 'PageTemplateController@vendor_update')->name('vtemplatePage.update');
+    Route::get('template/delete/{id}', 'PageTemplateController@vendor_deactivate')->name('vtemplatePage.deactivate');
 });

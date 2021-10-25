@@ -146,6 +146,13 @@
                                 <div class="side-menu-name">Technical Education {!! ($vTechnical->count() > 0 ? '<span>'.$vTechnical->count().'</span>' : null) !!}</div>
                             </a>
                         </li>
+                        <li>
+                            <a href="{{ route(Auth::user()->roles[0]->name.'.vtemplatePage') }}" class="{{ (request()->routeIs('vendor.vtemplatePage*') ? 'active' : '') }}">
+                                <i class="side-menu-icon event-icon"> </i>
+                               
+                                <div class="side-menu-name">Template</div>
+                            </a>
+                        </li>
                        <!--  <li>
                             <a href="">
                                 <i class="side-menu-icon announcements-icon"> </i>
@@ -234,6 +241,13 @@
                                 <div class="side-menu-name">
                                 Shared Opportunities
                                 </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ route(Auth::user()->roles[0]->name.'.ptemplatePage') }}" class="{{ (request()->routeIs('partner.ptemplatePage*') ? 'active' : '') }}">
+                                <i class="side-menu-icon event-icon"> </i>
+                               
+                                <div class="side-menu-name">Template</div>
                             </a>
                         </li>
                         <!-- <li>

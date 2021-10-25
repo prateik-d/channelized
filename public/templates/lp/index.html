@@ -1,0 +1,1850 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0130)https://measurableimpact.mydmportal.com/sw/swchannel/registration/internet/registration.cfm?RegPageID=6209711&SWCAMPAIGNID=2985633 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script async="" src="./assets/analytics.js"></script><script type="text/javascript" src="./assets/StandardFuncs.js"></script>
+
+<script src="./assets/provinces.js"></script>
+<script src="./assets/jquery.min.js"></script>
+
+			
+			
+			
+			
+
+	
+			
+			<meta name="description" content="">
+			<meta name="keywords" content="">
+
+			
+			<!-- Copyright (c) StructuredWeb 1999-2004 -->
+			<link rel="stylesheet" href="./assets/theme45951.css" type="text/css">
+			<title _msthash="149916" _msttexthash="588445">LP - Power 10 - Introducing E1080</title>
+			<script src="./assets/validationLocalized.js" type="text/javascript"></script><link href="./assets/validation.css" type="text/css" rel="stylesheet"><meta http-equiv="Pragma" content="no-cache"><meta http-equiv="Expires" content="-1"><script type="text/javascript" src="./assets/error_check.js"></script></head>
+		
+
+
+
+
+
+
+<body><div style="display:none;">
+
+</div>
+
+<script language="JavaScript">
+var AnalyticsTrackingSite='Forms/LP - Power 10 - Introducing E1080/';
+var AnalyticsTrackingGlobal='Forms/LP - Power 10 - Introducing E1080/';
+var AnalyticsTrackingCategory='Forms/LP - Power 10 - Introducing E1080/';
+var customUserId = '';
+var siteId = '91438';
+var bundleId = '10422';
+var pageId = '6209711';
+var managedPageId = '6140183';
+var managedPageSiteId = '79016';
+
+
+
+
+</script>
+
+<!-- Don't decode HTML because it will block our js and forms won't display correctly -->
+
+
+
+<script language="JavaScript">
+  function GoToNextField(FieldValue,MaxLength,FieldName)
+  {
+   var FVLength = FieldValue.length;
+   
+   if (FVLength >= MaxLength)
+   {
+    var numberofel = document.myForm.elements.length-1;
+    
+    //find the elementid that matches the name and then find 
+    //the next element on the form and set the focus on it
+    for(var i = 0; i <= numberofel; i++)
+    {
+     if(document.myForm.elements[i].name == FieldName)
+     {
+      nextelement = i+1;
+      document.myForm.elements[nextelement].focus();
+     }
+    }
+    
+   }
+  }
+  
+	function trimAll(sString) 
+	{
+		while (sString.substring(0,1) == ' ')
+		{
+		sString = sString.substring(1, sString.length);
+		}
+		while (sString.substring(sString.length-1, sString.length) == ' ')
+		{
+		sString = sString.substring(0,sString.length-1);
+		}
+		return sString;
+	}
+  
+	function CheckGroupAccessCode() 
+	{
+		document.myForm.SelfRegistrationPassword.value = trimAll(document.myForm.SelfRegistrationPassword.value)
+		
+		if (document.myForm.SelfRegistrationPassword.value.length > 0)
+		{
+		 	
+			var url = "/sw/swchannel/Registration/internet/CheckGroupAccessCode.cfm?SWSESSIONID=9621CEF28AEFB8FECE38E63E0B945E13&GroupAccessCode=" + document.myForm.SelfRegistrationPassword.value + "&ms=" + new Date().getTime() // The server-side script
+			
+			http.open("GET", url, true);
+			http.onreadystatechange = handleUpdateCalResponse;
+			http.send(null);
+		}
+	}
+
+	function handleUpdateCalResponse() 
+	{
+		if (http.readyState == 4) 
+		{
+			result = '';
+			result = http.responseText
+			if (result.indexOf('VALID GROUP ACCESS CODE') == -1)
+			{
+				document.getElementById("InvalidGroupAccessCode").innerHTML="Error: This is not a valid code";
+				document.myForm.SelfRegistrationPassword.focus();
+				document.myForm.SelfRegistrationPassword.select();
+			}
+			else
+			{
+				document.getElementById("InvalidGroupAccessCode").innerHTML=result; 
+			}
+		}
+	}
+	
+	function RequiredGroupAccessCode()
+	{
+		HTMLvalue = document.getElementById("InvalidGroupAccessCode").innerHTML;
+		
+		if (HTMLvalue.length > 0 && HTMLvalue.indexOf('Error') == -1)
+		{
+			//No error found
+			//alert('no error' + HTMLvalue);
+			document.myForm.HiddenSelfRegistrationPassword.value = "OK";
+		}
+	}
+	
+	function HideSubmit()
+	{
+		document.getElementById("SubmitButtonDiv").style.display = "none";
+		
+		setTimeout('ShowSubmit()', 3000);
+	}
+	
+	function ShowSubmit()
+	{
+		document.getElementById("SubmitButtonDiv").style.display = "block";
+	}
+	
+	var hash = {
+	  'exe'  : 1
+	};
+	
+	function CheckFileType(filename)
+	{
+		var ext = filename.substring(filename.lastIndexOf('.') + 1);
+		if(ext == "exe")
+		{
+			alert("You cannot upload executable (exe) files! Please browse and select a different file.");
+		}
+	}
+	
+	function checkTextArea(checkID)
+	{
+		checklen = eval('document.myForm.RegSubField_' + checkID + '.value.length');
+		
+		if(checklen > 3900)
+		{
+			eval('document.getElementById("TextAreaDesc_' + checkID + '").style.display = "block"');
+		}
+		
+		errText = '<span class="normal_error_text">WARNING: This content is currently <strong>' + checklen + '</strong> and you cannot go over 4000 characters in this field. All characters over 4000 will be trimmed off.</span>';
+		eval('document.getElementById("TextAreaDesc_' + checkID + '").innerHTML = errText');
+	}
+	function unsubShouldNotSubmit()
+	{
+		alert("This is a test only.  The subscription change will not be processed.");
+	}
+ </script>
+
+
+<script language="JavaScript">
+<!-- Original:  Richard Gorremans (RichardG@spiritwolfx.com) -->
+<!-- Web Site:  http://www.spiritwolfx.com -->
+
+<!-- This script and many more are available free online at -->
+<!-- The JavaScript Source!! http://javascript.internet.com -->
+
+<!-- Begin
+// Check browser version
+var isNav4 = false, isNav5 = false, isIE4 = false
+var strSeperator = "/"; 
+// If you are using any Java validation on the back side you will want to use the / because 
+// Java date validations do not recognize the dash as a valid date separator.
+var vDateType = 3; // Global value for type of date format
+//                1 = mm/dd/yyyy
+//                2 = yyyy/dd/mm  (Unable to do date check at this time)
+//                3 = dd/mm/yyyy
+var vYearType = 4; //Set to 2 or 4 for number of digits in the year for Netscape
+var vYearLength = 2; // Set to 4 if you want to force the user to enter 4 digits for the year before validating.
+var err = 0; // Set the error code to a default of zero
+if(navigator.appName == "Netscape") 
+{
+	if (navigator.appVersion < "5") 
+	{
+		isNav4 = true;
+		isNav5 = false;
+	}
+	else
+	if (navigator.appVersion > "4") 
+	{
+		isNav4 = false;
+		isNav5 = true;
+	}
+}
+else 
+{
+	isIE4 = true;
+}
+
+function DateFormat(vDateName, vDateValue, e, dateCheck, dateType) 
+{
+	vDateType = dateType;
+	// vDateName = object name
+	// vDateValue = value in the field being checked
+	// e = event
+	// dateCheck 
+	// True  = Verify that the vDateValue is a valid date
+	// False = Format values being entered into vDateValue only
+	// vDateType
+	// 1 = mm/dd/yyyy
+	// 2 = yyyy/mm/dd
+	// 3 = dd/mm/yyyy
+	//Enter a tilde sign for the first number and you can check the variable information.
+	
+	if (vDateValue == "~") 
+	{
+		alert("AppVersion = "+navigator.appVersion+" \nNav. 4 Version = "+isNav4+" \nNav. 5 Version = "+isNav5+" \nIE Version = "+isIE4+" \nYear Type = "+vYearType+" \nDate Type = "+vDateType+" \nSeparator = "+strSeperator);
+		vDateName.value = "";
+		vDateName.focus();
+		return true;
+	}
+	
+	var whichCode = (window.Event) ? e.which : e.keyCode;
+	// Check to see if a seperator is already present.
+	// bypass the date if a seperator is present and the length greater than 8
+	
+	if (vDateValue.length > 8 && isNav4) 
+	{
+		if ((vDateValue.indexOf("-") >= 1) || (vDateValue.indexOf("/") >= 1))
+		return true;
+	}
+	
+	//Eliminate all the ASCII codes that are not valid
+	var alphaCheck = " abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ/-";
+	
+	if (alphaCheck.indexOf(vDateValue) >= 1) 
+	{
+		if (isNav4) 
+		{
+			vDateName.value = "";
+			vDateName.focus();
+			vDateName.select();
+			return false;
+		}
+		else 
+		{
+			vDateName.value = vDateName.value.substr(0, (vDateValue.length-1));
+			return false;
+		}
+	}
+	
+	if (whichCode == 8) //Ignore the Netscape value for backspace. IE has no value
+		return false;
+	else 
+	{
+		//Create numeric string values for 0123456789/
+		//The codes provided include both keyboard and keypad values
+		var strCheck = '47,48,49,50,51,52,53,54,55,56,57,58,59,95,96,97,98,99,100,101,102,103,104,105';
+		if (strCheck.indexOf(whichCode) != -1) 
+		{
+			if (isNav4) 
+			{
+				if (((vDateValue.length < 6 && dateCheck) || (vDateValue.length == 7 && dateCheck)) && (vDateValue.length >=1)) 
+				{
+					alert("Invalid Date\nPlease Re-Enter");
+					vDateName.value = "";
+					vDateName.focus();
+					vDateName.select();
+					return false;
+				}
+				
+				if (vDateValue.length == 6 && dateCheck) 
+				{
+					var mDay = vDateName.value.substr(2,2);
+					var mMonth = vDateName.value.substr(0,2);
+					var mYear = vDateName.value.substr(4,4)
+					//Turn a two digit year into a 4 digit year
+					if (mYear.length == 2 && vYearType == 4) 
+					{
+						var mToday = new Date();
+						//If the year is greater than 30 years from now use 19, otherwise use 20
+						var checkYear = mToday.getFullYear() + 30; 
+						var mCheckYear = '20' + mYear;
+						if (mCheckYear >= checkYear)
+						mYear = '19' + mYear;
+						else
+						mYear = '20' + mYear;
+					}
+				
+				var vDateValueCheck = mMonth+strSeperator+mDay+strSeperator+mYear;
+				
+				if (!dateValid(vDateValueCheck)) 
+				{
+					alert("Invalid Date\nPlease Re-Enter");
+					vDateName.value = "";
+					vDateName.focus();
+					vDateName.select();
+					return false;
+				}
+			
+			return true;
+		}
+else {
+// Reformat the date for validation and set date type to a 1
+if (vDateValue.length >= 8  && dateCheck) {
+if (vDateType == 1) // mmddyyyy
+{
+	var mDay = vDateName.value.substr(2,2);
+	var mMonth = vDateName.value.substr(0,2);
+	var mYear = vDateName.value.substr(4,4)
+	vDateName.value = mMonth+strSeperator+mDay+strSeperator+mYear;
+}
+if (vDateType == 2) // yyyymmdd
+{
+	var mYear = vDateName.value.substr(0,4)
+	var mMonth = vDateName.value.substr(4,2);
+	var mDay = vDateName.value.substr(6,2);
+	vDateName.value = mYear+strSeperator+mMonth+strSeperator+mDay;
+}
+if (vDateType == 3) // ddmmyyyy
+{
+	var mMonth = vDateName.value.substr(2,2);
+	var mDay = vDateName.value.substr(0,2);
+	var mYear = vDateName.value.substr(4,4)
+	vDateName.value = mDay+strSeperator+mMonth+strSeperator+mYear;
+}
+//Create a temporary variable for storing the DateType and change
+//the DateType to a 1 for validation.
+var vDateTypeTemp = vDateType;
+vDateType = 1;
+var vDateValueCheck = mMonth+strSeperator+mDay+strSeperator+mYear;
+if (!dateValid(vDateValueCheck)) 
+{
+	alert("Invalid Date\nPlease Re-Enter");
+	vDateType = vDateTypeTemp;
+	vDateName.value = "";
+	vDateName.focus();
+	vDateName.select();
+	return false;
+}
+vDateType = vDateTypeTemp;
+return true;
+}
+else {
+if (((vDateValue.length < 8 && dateCheck) || (vDateValue.length == 9 && dateCheck)) && (vDateValue.length >=1)) {
+alert("Invalid Date\nPlease Re-Enter");
+vDateName.value = "";
+vDateName.focus();
+vDateName.select();
+return false;
+         }
+      }
+   }
+}
+else {
+// Non isNav Check
+if (((vDateValue.length < 8 && dateCheck) || (vDateValue.length == 9 && dateCheck)) && (vDateValue.length >=1)) 
+{
+	alert("Invalid Date\nPlease Re-Enter");
+	vDateName.value = "";
+	vDateName.focus();
+	return true;
+}
+// Reformat date to format that can be validated. mm/dd/yyyy
+if (vDateValue.length >= 8 && dateCheck) {
+// Additional date formats can be entered here and parsed out to
+// a valid date format that the validation routine will recognize.
+if (vDateType == 1) // mm/dd/yyyy
+{
+	var mMonth = vDateName.value.substr(0,2);
+	var mDay = vDateName.value.substr(3,2);
+	var mYear = vDateName.value.substr(6,4)
+}
+if (vDateType == 2) // yyyy/mm/dd
+{
+	var mYear = vDateName.value.substr(0,4)
+	var mMonth = vDateName.value.substr(5,2);
+	var mDay = vDateName.value.substr(8,2);
+}
+if (vDateType == 3) // dd/mm/yyyy
+{
+	var mDay = vDateName.value.substr(0,2);
+	var mMonth = vDateName.value.substr(3,2);
+	var mYear = vDateName.value.substr(6,4)
+}
+if (vYearLength == 4) {
+if (mYear.length < 4) {
+alert("Invalid Date\nPlease Re-Enter");
+vDateName.value = "";
+vDateName.focus();
+return true;
+   }
+}
+// Create temp. variable for storing the current vDateType
+var vDateTypeTemp = vDateType;
+// Change vDateType to a 1 for standard date format for validation
+// Type will be changed back when validation is completed.
+vDateType = 1;
+// Store reformatted date to new variable for validation.
+var vDateValueCheck = mMonth+strSeperator+mDay+strSeperator+mYear;
+if (mYear.length == 2 && vYearType == 4 && dateCheck) {
+//Turn a two digit year into a 4 digit year
+var mToday = new Date();
+//If the year is greater than 30 years from now use 19, otherwise use 20
+var checkYear = mToday.getFullYear() + 30; 
+var mCheckYear = '20' + mYear;
+if (mCheckYear >= checkYear)
+mYear = '19' + mYear;
+else
+mYear = '20' + mYear;
+vDateValueCheck = mMonth+strSeperator+mDay+strSeperator+mYear;
+// Store the new value back to the field.  This function will
+// not work with date type of 2 since the year is entered first.
+if (vDateTypeTemp == 1) // mm/dd/yyyy
+vDateName.value = mMonth+strSeperator+mDay+strSeperator+mYear;
+if (vDateTypeTemp == 3) // dd/mm/yyyy
+vDateName.value = mDay+strSeperator+mMonth+strSeperator+mYear;
+} 
+if (!dateValid(vDateValueCheck)) {
+alert("Invalid Date\nPlease Re-Enter");
+vDateType = vDateTypeTemp;
+vDateName.value = "";
+vDateName.focus();
+return true;
+}
+vDateType = vDateTypeTemp;
+return true;
+}
+else {
+if (vDateType == 1) {
+if (vDateValue.length == 2) {
+vDateName.value = vDateValue+strSeperator;
+}
+if (vDateValue.length == 5) {
+vDateName.value = vDateValue+strSeperator;
+   }
+}
+if (vDateType == 2) {
+if (vDateValue.length == 4) {
+vDateName.value = vDateValue+strSeperator;
+}
+if (vDateValue.length == 7) {
+vDateName.value = vDateValue+strSeperator;
+   }
+} 
+if (vDateType == 3) {
+if (vDateValue.length == 2) {
+vDateName.value = vDateValue+strSeperator;
+}
+if (vDateValue.length == 5) {
+vDateName.value = vDateValue+strSeperator;
+   }
+}
+return true;
+   }
+}
+if (vDateValue.length == 10&& dateCheck) {
+if (!dateValid(vDateName)) {
+// Un-comment the next line of code for debugging the dateValid() function error messages
+//alert(err);  
+alert("Invalid Date\nPlease Re-Enter");
+vDateName.focus();
+vDateName.select();
+   }
+}
+return false;
+}
+else {
+// If the value is not in the string return the string minus the last
+// key entered.
+if (isNav4) {
+vDateName.value = "";
+vDateName.focus();
+vDateName.select();
+return false;
+}
+else
+{
+//Commented to remove the deleting of characters on back space
+//vDateName.value = vDateName.value.substr(0, (vDateValue.length));
+return false;
+         }
+      }
+   }
+}
+function dateValid(objName) {
+var strDate;
+var strDateArray;
+var strDay;
+var strMonth;
+var strYear;
+var intday;
+var intMonth;
+var intYear;
+var booFound = false;
+var datefield = objName;
+var strSeparatorArray = new Array("-"," ","/",".");
+var intElementNr;
+// var err = 0;
+var strMonthArray = new Array(12);
+strMonthArray[0] = "Jan";
+strMonthArray[1] = "Feb";
+strMonthArray[2] = "Mar";
+strMonthArray[3] = "Apr";
+strMonthArray[4] = "May";
+strMonthArray[5] = "Jun";
+strMonthArray[6] = "Jul";
+strMonthArray[7] = "Aug";
+strMonthArray[8] = "Sep";
+strMonthArray[9] = "Oct";
+strMonthArray[10] = "Nov";
+strMonthArray[11] = "Dec";
+//strDate = datefield.value;
+strDate = objName;
+if (strDate.length < 1) {
+return true;
+}
+for (intElementNr = 0; intElementNr < strSeparatorArray.length; intElementNr++) {
+if (strDate.indexOf(strSeparatorArray[intElementNr]) != -1) {
+strDateArray = strDate.split(strSeparatorArray[intElementNr]);
+if (strDateArray.length != 3) {
+err = 1;
+return false;
+}
+else {
+strDay = strDateArray[0];
+strMonth = strDateArray[1];
+strYear = strDateArray[2];
+}
+booFound = true;
+   }
+}
+if (booFound == false) {
+if (strDate.length>5) {
+strDay = strDate.substr(0, 2);
+strMonth = strDate.substr(2, 2);
+strYear = strDate.substr(4);
+   }
+}
+//Adjustment for short years entered
+if (strYear.length == 2) {
+strYear = '20' + strYear;
+}
+strTemp = strDay;
+strDay = strMonth;
+strMonth = strTemp;
+intday = parseInt(strDay, 10);
+if (isNaN(intday)) {
+err = 2;
+return false;
+}
+intMonth = parseInt(strMonth, 10);
+if (isNaN(intMonth)) {
+for (i = 0;i<12;i++) {
+if (strMonth.toUpperCase() == strMonthArray[i].toUpperCase()) {
+intMonth = i+1;
+strMonth = strMonthArray[i];
+i = 12;
+   }
+}
+if (isNaN(intMonth)) {
+err = 3;
+return false;
+   }
+}
+intYear = parseInt(strYear, 10);
+if (isNaN(intYear)) {
+err = 4;
+return false;
+}
+if (intMonth>12 || intMonth<1) {
+err = 5;
+return false;
+}
+if ((intMonth == 1 || intMonth == 3 || intMonth == 5 || intMonth == 7 || intMonth == 8 || intMonth == 10 || intMonth == 12) && (intday > 31 || intday < 1)) {
+err = 6;
+return false;
+}
+if ((intMonth == 4 || intMonth == 6 || intMonth == 9 || intMonth == 11) && (intday > 30 || intday < 1)) {
+err = 7;
+return false;
+}
+if (intMonth == 2) {
+if (intday < 1) {
+err = 8;
+return false;
+}
+if (LeapYear(intYear) == true) {
+if (intday > 29) {
+err = 9;
+return false;
+   }
+}
+else {
+if (intday > 28) {
+err = 10;
+return false;
+      }
+   }
+}
+return true;
+}
+function LeapYear(intYear) {
+if (intYear % 100 == 0) {
+if (intYear % 400 == 0) { return true; }
+}
+else {
+if ((intYear % 4) == 0) { return true; }
+}
+return false;
+}
+//  End -->
+</script> 
+
+<!-- Getting the Domain name for the event - SW - 8062. -->
+<!--header start -->
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+	<tbody>
+		<tr>
+			<td align="left" class="outbg" valign="top"><!--header end --> 
+	<span style="display: none;">
+ 
+</span>
+
+
+<span class="normal_text">
+<meta content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" name="viewport"><script src="./assets/jquery.min(1).js"></script><script>
+$(function(){
+
+var accname = $('.ufstlast').text();
+$('#HomeWelcome_Elem h1 .ufstlPlc').text(accname);
+
+var getUrl;
+var newUrl;
+var urlStor = 0;
+
+$('.overlay').hide();
+$('.overlay2').hide();
+$('.dropBox').hide();
+	
+$('.allLinks').each(function(){
+	someAsset = this.href;
+	/*openFile(someAsset);*/
+	var extension = someAsset.substr( (someAsset.lastIndexOf('.') +1) );
+    switch(extension) {
+        case 'zip':
+        case 'rar':
+		case 'doc':
+		case 'docx':
+		case 'ppt':
+		case 'xls':
+		case 'pdf':
+		case 'ZIP':
+        case 'RAR':
+		case 'DOC':
+		case 'DOCX':
+		case 'PPT':
+		case 'XLX':
+		case 'PDF':
+            $(this).attr('target','_blank');
+        break;
+		case 'mp4':
+		case 'MP4':
+            $(this).addClass('clickIconF');
+		break;
+        default:
+			$(this).addClass('clickIcon');
+    }
+	console.log(extension);
+});
+
+$('.clickIcon').click(function() {
+	getUrl = $(this).attr("href");	
+	//console.log(getUrl);	
+	if(getUrl.indexOf('stwb.co') > -1 || getUrl.indexOf('stwb[dot]co') > -1 || getUrl.indexOf('CampaignPreview.aspx') > -1 || getUrl.indexOf('CampaignPreview[dot]aspx') > -1){
+		$(this).attr('target','_blank');
+		console.log('share or page link');
+	}
+	if(getUrl.indexOf('RegPageID') > -1 || getUrl.indexOf('RegPageManagedID') > -1){
+	
+		if(urlStor > 0){
+			$('#popForm').find('iframe').attr('src', newUrl);
+			console.log('new');
+		}
+		else {
+			$('#popForm').find('iframe').attr('src', getUrl);
+			console.log('old');
+		}
+	
+		$('.overlay2').fadeIn();
+		$('#popForm').fadeIn();
+		
+		setTimeout(function(){
+			urlStor = 1;
+			$('.overlay2').hide();
+			$('#popForm').hide();
+			newUrl = document.getElementById("iframe_id").contentWindow.location.href;
+			$('#popForm').find('iframe').attr('src', newUrl);
+		}, 180000);
+		
+		console.log('form page');
+		return false;
+	}
+	if(getUrl.indexOf('youtube') > -1){
+    	var you_part = getUrl.substring(getUrl.lastIndexOf("/") + 1, getUrl.length);
+	
+		$('#vidDiv').find('iframe').attr('src', ('https://www.youtube.com/embed/'+you_part+'?autoplay=1'));
+		$('.overlay').fadeIn();
+		$('#vidDiv').fadeIn();
+		console.log('youtube');
+		return false;
+	}
+	if(getUrl.indexOf('vimeo') > -1){
+		$('#vidDiv').find('iframe').attr('src', getUrl);
+		$('.overlay').fadeIn();
+		$('#vidDiv').fadeIn();
+		console.log('vimeo');
+		return false;
+	}
+	if(getUrl.indexOf('kaltura') > -1){
+			var kal_part = getUrl.split('_id=');
+				kal_part = kal_part[1];
+				kal_part = kal_part.split('&');
+				kal_part = kal_part[0];
+			var kal_url = 'https://cdnapisec.kaltura.com/p/1773841/sp/177384100/embedIframeJs/uiconf_id/44837961/partner_id/1773841?iframeembed=true&playerId=kplayer&entry_id='+kal_part+'&flashvars[streamerType]=auto';
+		$('#vidDiv').find('iframe').attr('src', kal_url);
+		$('.overlay').fadeIn();
+		$('#vidDiv').fadeIn();
+		console.log('kaltura - '+kal_url);
+		return false;
+	}
+	if(getUrl.indexOf('[dot]mp4') > -1){
+		getUrl = $(this).attr("href");	
+		$('#vidDiv').find('iframe').attr('src', (getUrl));
+		$('.overlay').fadeIn();
+		$('#vidDiv').fadeIn();
+		console.log('sw video');
+		return false;
+	}
+	else {
+		if(getUrl == '#formarea'){}
+		else{
+			$(this).attr('target','_blank');
+		}
+	}
+});
+$('.clickIconF').click(function() {
+	//console.log(getUrl);	
+	getUrl = $(this).attr("href");	
+	$('#vidDiv').find('iframe').attr('src', (getUrl));
+	$('.overlay').fadeIn();
+	$('#vidDiv').fadeIn();
+	return false;
+	console.log('sw video');
+});
+$('.closeBtn').click(function() {
+	$('#vidDiv').find('iframe').attr('src','');
+	$('#vidDiv').fadeOut();
+	$('.overlay').fadeOut();		
+	return false;
+});
+$('.actionPageClose').click(function() {
+	urlStor = 1;
+	newUrl = document.getElementById("iframe_id").contentWindow.location.href;
+	$('#popForm').find('iframe').attr('src',newUrl);
+	$('#popForm').fadeOut();
+	$('.overlay2').fadeOut();		
+	
+	console.log(newUrl);
+	return false;
+});
+
+$(document).on('click','.targetform',function() {
+	$('html, body').animate({
+		scrollTop: $('#formarea').offset().top
+	}, 1200);
+	
+	$('#formarea input[name=firstname]').focus();
+	return false;
+});
+});
+</script><script>
+function popupWindow(url, title, win, w, h) {
+    const y = win.top.outerHeight / 2 + win.top.screenY - ( h / 2);
+    const x = win.top.outerWidth / 2 + win.top.screenX - ( w / 2);
+    return win.open(url, title, 'toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=no, copyhistory=no, width='+w+', height='+h+', top='+y+', left='+x);
+}
+</script>
+<style type="text/css">@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+.outerWraper {
+	max-width:1400px;
+	width:100%;
+	padding:0;
+	margin:0 auto;
+	font-family: 'IBM Plex Sans', sans-serif;
+	font-size:18px;
+	line-height:28px;
+	color:#1d1d1d;
+	font-weight:400;
+}
+.outerWraper .contSecTopLft .welcomeArea {
+	padding:0 0 30px;
+}
+.outerWraper .contSecTopLft .welcomeArea p {
+	font-size: 18px;
+	line-height: 28px;
+}
+.outerWraper div, .outerWraper td, .outerWraper p, .outerWraper a, .outerWraper h1, .outerWraper h2, .outerWraper h3, .outerWraper h4, .outerWraper h5, .outerWraper li, .outerWraper form, .outerWraper input, .outerWraper select {
+	padding:0;
+	margin:0;
+}
+.outerWraper img {
+	padding:0;
+	margin:0;
+	border:none;
+	display:block;
+}
+.outerWraper ul {
+	padding:0;
+	margin:0;
+	list-style-type:none;
+}
+.outerWraper a {
+	text-decoration:none;
+	outline:none;
+	font: inherit;
+	color: #0769fe;
+}
+.outerWraper a:hover {color: #0345a9;}
+.outerWraper h2 {
+	font-family: 'IBM Plex Sans', sans-serif;
+	font-size:22px;
+	line-height:28px;
+	color:#0769fe;
+	margin-bottom:8px;
+	font-weight:700;
+}
+.outerWraper p {
+	font-family: 'IBM Plex Sans', sans-serif;
+	font-size:18px;
+	line-height:28px;
+	color:#1d1d1d;
+	margin-bottom:24px;
+	font-weight:400;
+}
+.outerWraper .spacer {
+	padding:0;
+	margin:0;
+	line-height:0;
+	font-size:0;
+	clear:both;
+}
+.outerWraper .EditTag {
+	width:30px;
+	height:30px;
+}
+.outerWraper .mainWraper {
+	max-width:1280px;
+	width:100%;
+	margin:0 auto;
+}
+.outerWraper .mainWraperCont {
+	max-width:1280px;
+	width:100%;
+	margin:0 auto;
+	display:flex;
+	justify-content: space-between;
+}
+.outerWraper .logoSec {
+	padding:60px 0 30px 0;
+}
+.outerWraper .logoSec img {
+	width:170px;
+	height:auto;
+	display:block;
+}
+.outerWraper .banSec {
+	padding:75px 0 92px;
+	margin:0;
+}
+.outerWraper .banSec h2 {
+	line-height: 40px;
+	font-family: 'IBM Plex Sans', sans-serif;
+	/*color: #ffffff;*/
+    font-size: 32px;
+	margin-bottom: 10px;
+}
+.outerWraper .banSec p {
+	font-family: 'IBM Plex Sans', sans-serif;
+	/*color:#ffffff;*/
+	font-size:26px;
+	line-height:30px;
+}
+.outerWraper .banSec a {
+	width:auto;
+	display:inline;
+	text-decoration:none;
+	/*background-color:#0769fe;*/
+	font-family: 'IBM Plex Sans', sans-serif;
+	font-size:18px;
+	line-height:28px;
+	color:#ffffff;
+	font-weight:600;
+	padding:15px 35px 15px 20px;
+	box-sizing: border-box;
+	background:url(/sw/swchannel/images/users/138104/lp/arrow-white-new.png) no-repeat 100% 22px #0769fe;
+	background-color:#0769fe;
+}
+/*.outerWraper .banSec a span {
+	display:inline-block;
+	width:13px;
+	height:10px;
+	background:url(/sw/swchannel/images/users/138104/lp/arrow-white.png) no-repeat 0 0;
+	margin:0 0 0 15px;
+}*/
+.outerWraper a:empty {
+	display:none!important;
+}
+.outerWraper .contSec {
+	border-bottom:1px solid #c5c5c5;
+}
+.outerWraper .contSecTop {
+	padding:40px 0 0;
+}
+.outerWraper .contSecTopLft {
+	flex-basis:66%;
+	padding: 0 5% 0 0;
+	box-sizing: border-box;
+	border-right: 1px solid #c5c5c5;
+}
+.outerWraper .contSecTopRght {
+	flex-basis:30%;
+	padding:0 0 3% 0;
+}
+.outerWraper .contSecTopLftIn_new {
+	padding-bottom: 40px;
+	margin-bottom: 40px;
+	width: 100%;
+	/*display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #c5c5c5;
+    flex-direction: row-reverse;*/
+}
+.outerWraper .contSecTopLftIn_new:empty {
+	display:none!important;
+}
+/*.outerWraper .contSecTopLftIn_new:nth-child(3):empty{
+	border-bottom:none!important;
+	}*/
+/*.outerWraper .contSecTopLftIn_new:last-child {
+	border-bottom:none!important;
+}*/
+.outerWraper .contSecTopLftIn_new span .bothPan {
+	display:flex;
+	justify-content: space-between;
+	padding-bottom:0px;
+	margin-bottom:0px;
+	width:100%;
+	flex-direction: row-reverse;
+}
+.outerWraper .contSecTopLftIn {
+	display:flex;
+	justify-content: space-between;
+	padding-bottom:40px;
+	/*border-bottom:1px solid #c5c5c5;*/
+	margin-bottom:40px;
+	width:100%;
+	flex-direction: row-reverse;
+}
+.outerWraper .contSecTopLftInLft ul {
+	padding:0;
+	margin:0 0 20px 0;
+	list-style-type:none;
+}
+.outerWraper .contSecTopLftInLft ul li {
+	background:url(/sw/swchannel/images/users/138104/lp/blue-bullet-ibm.png) no-repeat 0 9px;
+	padding:0 0 10px 20px;
+}
+.outerWraper .contSecTopLftIn span {
+	display:flex;
+	justify-content: space-between;
+	width:100%;
+	flex-direction: row-reverse;
+}
+/*.outerWraper .contSecTopLftIn:nth-child(3)span{
+	display:table!important;
+	}
+ .outerWraper .contSecTopLftIn span .contSecSpl{
+	display:flex;
+	justify-content: space-between;
+	width:100%;
+	flex-direction: row-reverse;
+	}*/
+ .outerWraper .contSecTopLftIn span .contSecSpl:last-child {
+	padding-top: 40px!important;
+	border-top: 1px solid #c5c5c5!important;
+	margin-top: 40px;
+}
+.outerWraper .contSecTopLftIn:last-child {
+	border-bottom:none;
+}
+.outerWraper .contSecTopLftInLft {
+	width:65%;
+}
+.outerWraper .contSecTopLftInLft p {
+	font-family: 'IBM Plex Sans', sans-serif;
+	font-size: 18px;
+	line-height: 28px;
+	color: #1d1d1d;
+	margin-bottom: 24px;
+	font-weight: 400;
+}
+.outerWraper .contSecTopLftInRght {
+	width:30%;
+}
+.outerWraper .contSecTopLftInRght a {
+	display:block;
+	text-decoration:none;
+}
+.outerWraper .contSecTopLftInRght img {
+	padding:6px;
+	border:1px solid #ebebeb;
+	width:100%;
+	box-sizing:border-box;
+}
+.outerWraper a.ctaAnch {
+	display: inline-block;
+	text-decoration: none;
+	color: #0769fe;
+	background: url(/sw/swchannel/images/users/138104/lp/arrow.png) no-repeat 100% 8px;
+	width: auto;
+	font-family: 'IBM Plex Sans', sans-serif;
+	font-size: 18px;
+	line-height: 28px;
+	font-weight: 400;
+	padding: 0 22px 0 0;
+}
+.outerWraper a.ctaAnch:hover {
+	color:#0345a9;
+}
+.outerWraper .newSec{
+	padding-bottom:40px!important;
+	margin-bottom:40px!important;
+	border-bottom: 1px solid #C5C5C5!important;
+}
+.outerWraper .formSec {
+	padding:60px 0;
+	border-bottom:1px solid #e2e2e2;
+}
+.outerWraper .footerSec {
+	padding:40px 0 90px;
+}
+.outerWraper .ibmLogo {
+	flex-basis:146px;
+}
+.outerWraper .ibmLogo img {
+	width:146px;
+	height:auto;
+}
+.outerWraper .addressPan {
+	flex-basis:250px;
+	font-family: 'IBM Plex Sans', sans-serif;
+	font-size:14px;
+	line-height:28px;
+	color:#1d1d1d;
+	font-weight:400;
+	text-align:right;
+}
+.outerWraper .footerSecAdd {
+	margin-bottom:30px;
+}
+.outerWraper .footerSecCopy {
+	text-align:center;
+	border-top:1px solid #7f7f7f;
+	border-bottom:1px solid #7f7f7f;
+	padding:15px 0;
+	margin-bottom:30px;
+}
+.outerWraper .footerSecCopy p {
+	margin:0;
+	font-family: 'IBM Plex Sans', sans-serif;
+	font-size:12px;
+	line-height:28px;
+	color:#595959;
+	font-weight:400;
+}
+.outerWraper .footerSecDisclaim p {
+	font-family: 'IBM Plex Sans', sans-serif;
+	font-size:10px;
+	line-height:14px;
+	color:#595959;
+	font-weight:400;
+}
+.outerWraper .footerSecDisclaim p a {
+	color:#0769fe;
+	font-family: 'IBM Plex Sans', sans-serif;
+	font-size:10px;
+	line-height:14px;
+	color:#0769fe;
+	font-weight:400;
+}
+/*--------Light Box--------*/
+.overlay, .overlay2 {
+	background:rgba(0, 0, 0, .8);
+	position:fixed;
+	z-index:9999999;
+	width:100%;
+	height:100%;
+	left:0;
+	top:0;
+}
+.dropBox {
+	z-index:99999999;
+	width:90%;
+	max-width:700px;
+	position:fixed;
+	top:8%;
+	left:50%;
+	margin:0 auto auto -400px;
+	height:600px;
+	background:#fff;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+}
+.dropBox.videoArea {
+	height:500px;
+	max-width:800px;
+	margin:0 auto auto -400px;
+}
+.dropInner {
+	position:relative;
+	padding:20px;
+	box-sizing:border-box;
+	height:100%;
+}
+.vidWrap {
+	height:100%!important;
+}
+.closeBtn, .closeBtnF, a.closeBtn, a.closeBtnF, .actionPageClose {
+	position:absolute;
+	top:-10px;
+	right:-10px;
+	font-size:20px;
+	line-height:26px;
+	color:#fff;
+	font-weight:600;
+	font-family:Arial, Helvetica, sans-serif;
+	text-decoration:none;
+	display:block;
+	background:#000;
+	border:2px solid #ccc;
+	border-radius:50%;
+	moz-border-radius:50%;
+	text-align:center;
+	height:28px;
+	width:28px;
+}
+.closeBtn:hover, .closeBtnF:hover, a.closeBtn:hover, a.closeBtnF:hover, .actionPageClose:hover {
+	color:#FF0000;
+}
+.scrollContent {
+	overflow:auto!important;
+	height:560px!important;
+}
+.dropBox {
+	display:none;
+}
+/*--------Light Box--------*/
+/*--------Form style-------*/
+.outerWraper .contSecTopRght .normal_bold_text {
+	font-family: 'IBM Plex Sans', sans-serif;
+	font-size:18px;
+	line-height:28px;
+	font-weight:400;
+}
+.outerWraper .contSecTopRght .normal_text {
+	font-family: 'IBM Plex Sans', sans-serif;
+	font-size:18px;
+	line-height:28px;
+	font-weight:400;
+}
+.outerWraper .contSecTopRght table {
+	width:100%;
+}
+.outerWraper .contSecTopRght .FormTextBox, .outerWraper .contSecTopRght .FormTextBoxFocus {
+	width:100%;
+	padding:0 2%;
+	box-sizing: border-box;
+	height:50px;
+	border:1px solid #96a1ae;
+	margin:0 0 10px 0!important;
+	font-family: 'IBM Plex Sans', sans-serif;
+	font-size:18px;
+	line-height:40px;
+	font-weight:400;
+}
+/*.mainWraper .formPan .FormAreaCodeBox, .mainWraper .formPan .FormAreaCodeBoxFocus{
+ width:100px;
+ height:28px;
+ border:1px solid #B5B5B5;
+ margin:0 0 5px 0;
+}*/
+.outerWraper .contSecTopRght .FormPhoneBox, .outerWraper .contSecTopRght .FormPhoneBoxFocus {
+	width:100%;
+	padding:0 2%;
+	box-sizing: border-box;
+	height:50px;
+	border:1px solid #96a1ae;
+	margin:0 0 10px 0!important;
+	font-family: 'IBM Plex Sans', sans-serif;
+	font-size:18px;
+	line-height:40px;
+	font-weight:400;
+}
+.outerWraper .contSecTopRght .FormTextAreaBox, .outerWraper .contSecTopRght .FormTextAreaBoxFocus {
+	width:100%;
+	padding:0 2%;
+	box-sizing: border-box;
+	height:50px;
+	border:1px solid #96a1ae;
+	margin:0 0 10px 0!important;
+	font-family: 'IBM Plex Sans', sans-serif;
+	font-size:18px;
+	line-height:40px;
+	font-weight:400;
+}
+/*.mainWraper .formPan .FormSelectBox, .mainWraper .formPan .FormSelectBoxFocus{
+ width:300px;
+ height:20px;
+ border:1px solid #B5B5B5;
+ margin:0 0 5px 0;
+}*/
+.outerWraper .contSecTopRght .FormTextBox, .outerWraper .contSecTopRght .FormTextBoxFocus, .outerWraper .contSecTopRght input[type=text].requiredField, .outerWraper .contSecTopRght input[type=email].requiredField, .outerWraper .contSecTopRght input[type=tel].requiredField, .outerWraper .contSecTopRght input.requiredField {
+	width:100%;
+	padding:0 2%;
+	box-sizing: border-box;
+	height:50px;
+	border:1px solid #96a1ae;
+	margin:0 0 10px 0!important;
+	font-family: 'IBM Plex Sans', sans-serif;
+	font-size:18px;
+	line-height:40px;
+	font-weight:400;
+}
+/*--------Form style-------*/
+@media screen and (max-width : 1024px) {
+.outerWraper {
+ width:100%;
+}
+.outerWraper .mainWraper {
+ width:90%!important;
+}
+.outerWraper .mainWraperCont {
+ width:90%!important;
+}
+.outerWraper a.ctaAnch {
+ background: url(/sw/swchannel/images/users/138104/lp/arrow.png) no-repeat 100% 9px;
+ width: 190px;
+}
+.outerWraper .contSecTopLftInRght img {
+ width:100%;
+ box-sizing: border-box;
+}
+}
+@media screen and (max-width : 960px) {
+.outerWraper .mainWraperCont {
+ flex-wrap: wrap;
+}
+.outerWraper .contSecTopLft {
+ flex-basis:100%!important;
+}
+.outerWraper .contSecTopRght {
+ flex-basis:100%!important;
+}
+.outerWraper .contSecTopLft {
+ border:none;
+ padding:0;
+}
+}
+@media screen and (max-width : 900px) {
+.dropBox.videoArea {
+ margin:0 5%;
+ left:0;
+ top:5%;
+}
+}
+@media screen and (max-width : 767px) {
+.outerWraper .mainWraperCont {
+ flex-direction: inherit;
+ flex-wrap: wrap;
+}
+.outerWraper .contSecTopLft {
+ flex-basis: 100%!important;
+}
+.outerWraper .contSecTopRght {
+ flex-basis: 100%!important;
+}
+.outerWraper .contSecTopRght a {
+ margin:0 auto 20px;
+}
+.outerWraper .contSecBotBox {
+ width:100%;
+ margin-bottom:20px;
+}
+.outerWraper .addressPan {
+ flex-basis:100%;
+ text-align:left;
+ margin-bottom:20px;
+}
+.outerWraper .ibmLogo {
+ flex-basis:100%;
+ margin-bottom:20px;
+}
+}
+@media screen and (max-width:660px) {
+.dropBox {
+ width:90%;
+ left:0;
+ margin:0 5% auto;
+ top:5%;
+}
+}
+@media screen and (max-width:600px) {
+.dropBox {
+top:15px;
+}
+.outerWraper .contSecTopLftIn {
+ flex-wrap: wrap;
+ flex-direction: column;
+}
+.outerWraper .contSecTopLftInRght {
+ width:60%;
+ margin-bottom:15px;
+}
+.outerWraper .contSecTopLftInLft {
+ width:100%;
+}
+}
+@media screen and (max-width : 500px) {
+.dropBox {
+ height:300px;
+}
+.scrollContent {
+ height:250px!important;
+}
+.outerWraper .contSecTopLftIn {
+ display:inherit!important;
+}
+}
+@media screen and (max-width : 480px) {
+ .outerWraper .contSecTopLftInRght {
+ width:100%;
+ margin-bottom:15px;
+}
+.outerWraper .contSecTopLftIn span {
+ display:inherit!important;
+}
+.outerWraper .contSecTopLftIn_new span .bothPan {
+ display:table;
+}
+}
+@media screen and (max-width:400px) {
+.dropBox {
+ height:400px;
+}
+}
+</style>
+<div class="overlay" style="display:none;">&nbsp;</div>
+
+<div class="overlay2" style="display:none;">&nbsp;</div>
+
+<div class="outerWraper">
+	<div class="logoSec">
+		<div class="mainWraper"><img src="./assets/MI_Logo_Signature.png" id="logo" border="0"></div>
+	</div>
+
+	<div class="banSec">
+		<div class="mainWraper">
+			<h2>
+		<span id="Field117738" _msthash="2614560" _msttexthash="972608"> Meet IBM Power10: Engineer for Agility </span>
+	</h2>
+
+			<p>
+		<span id="Field117739" _msthash="2543242" _msttexthash="2883569"> modernize your location with frictionless hybrid cloud experience </span>
+	</p>
+			<a class="targetform" href="https://measurableimpact.mydmportal.com/sw/swchannel/registration/internet/Click%20Here"></a></div>
+	</div>
+
+	<div class="contSec">
+		<div class="contSecTop">
+			<div class="mainWraperCont">
+				<div class="contSecTopLft">
+					<div class="welcomeArea">
+		<span id="Field117742">
+		
+
+
+		<p _msthash="190216" _msttexthash="19216314">IBM Power10: Engineer for agility. <br _istranslated="1"> </br>Respond faster to business demands, protect data from core to cloud, and streamline insights and automation with a frictionless hybrid cloud experience.</p>
+		</span>
+	</div>
+
+					<div class="contSecTopLftIn_new" id="divider1">
+		<span id="Field117743">
+		
+
+
+		<div class="bothPan"><div class="contSecTopLftInRght" id="Asset1"><a class="allLinks clickIcon" href="https://measurableimpact.mydmportal.com/sw/tasks/Redirect.cfm?ECC=[ECC]&amp;CUSTOMERIDE=[CAMPAIGNSCUSTOMERIDENCR]&amp;LINKIDE=aDHT_K4LkZ7qRXUmkR31Eg2&amp;URL=[https]cdnapisec[dot]kaltura[dot]com/p/1773841/sp/177384100/embedIframeJs/uiconf_id/44837961/partner_id/1773841[Q]iframeembed=true&amp;playerId=kplayer&amp;entry_id=1_qadrhci1&amp;flashvars[streamerType]=auto"><img border="0" src="./assets/081621_power_10_tvideo.jpg"></a></div><div class="contSecTopLftInLft"><p _msthash="530387" _msttexthash="10062403"> the latest ibm power server has more efficient scaling with payment, simplified end-to-end encryption and quick ai for continuous use.</p> <a class="ctaAnch allLinks clickIcon" href="https://measurableimpact.mydmportal.com/sw/tasks/Redirect.cfm?ECC=[ECC]&amp;CUSTOMERIDE=[CAMPAIGNSCUSTOMERIDENCR]&amp;LINKIDE=2MKNlzXTWacRV_StMjfLYw2&amp;URL=[https]cdnapisec[dot]kaltura[dot]com/p/1773841/sp/177384100/embedIframeJs/uiconf_id/44837961/partner_id/1773841[Q]iframeembed=true&amp;playerId=kplayer&amp;entry_id=1_qadrhci1&amp;flashvars[streamerType]=auto" _msthash="529139" _msttexthash="263133">watch that video</a></div></div>
+		</span>
+	</div>
+
+					<div class="contSecTopLftIn_new" id="divider2">
+		<span id="Field117744">
+		
+
+
+		<div class="bothPan"><div class="contSecTopLftInRght" id="Asset2"><a class="targetform" href="https://measurableimpact.mydmportal.com/sw/swchannel/registration/internet/registration.cfm?RegPageID=6209711&amp;SWCAMPAIGNID=2985633#"><img border="0" src="./assets/081621_power_10_t_idc.jpg"></a></div><div class="contSecTopLftInLft"><p _msthash="530816" _msttexthash="26028782"> Becoming a modern digital enterprise and setting strategies to achieve IT success can be complicated. By reviewing this IDC paper, you can learn how IBM Power, with Power E1080 server, can support your demanding business needs.</p> <a class="ctaAnch targetform" href="https://measurableimpact.mydmportal.com/sw/swchannel/registration/internet/registration.cfm?RegPageID=6209711&amp;SWCAMPAIGNID=2985633#" _msthash="529568" _msttexthash="318838">download idc paper</a></div></div>
+		</span>
+	</div>
+
+					<div class="contSecTopLftIn_new" id="divider3">
+		<span id="Field117745">
+		
+
+
+		<div class="bothPan"><div class="contSecTopLftInRght" id="Asset3"><a href="https://measurableimpact.mydmportal.com/sw/tasks/Redirect.cfm?ECC=[ECC]&amp;CUSTOMERIDE=[CAMPAIGNSCUSTOMERIDENCR]&amp;LINKIDE=uY2dyFsqaVjdAjzS0GID1w2&amp;URL=[https]apps[dot]kaonadn[dot]net/4882011/IBM_Power_Interactive_Update/welcome/index[dot]html" target="_blank"><img border="0" src="./assets/081621_power_10_t7.jpg"></a></div><div class="contSecTopLftInLft"><p _msthash="531245" _msttexthash="5120609"> Explore the most trusted and secure server IBM Power E1080 of your category in the 3D virtual tour.</p> <a class="ctaAnch" href="https://measurableimpact.mydmportal.com/sw/tasks/Redirect.cfm?ECC=[ECC]&amp;CUSTOMERIDE=[CAMPAIGNSCUSTOMERIDENCR]&amp;LINKIDE=gIT5M6V4TwP-QHQpQB5pQA2&amp;URL=[https]apps[dot]kaonadn[dot]net/4882011/IBM_Power_Interactive_Update/welcome/index[dot]html" target="_blank" _msthash="529997" _msttexthash="224302">VIEW IBM POWER E1080</a></div></div>
+		</span>
+	</div>
+
+					<div class="contSecTopLftIn_new" id="divider4">
+		<span id="Field117746">
+		
+
+
+		
+		</span>
+	</div>
+				</div>
+
+				<div class="contSecTopRght" id="formarea">
+					<h2>
+		<span id="Field117747" _msthash="209521" _msttexthash="605319"> need some more information? </span>
+	</h2>
+
+					<p>
+		<span id="Field117748" _msthash="191724" _msttexthash="1065220"> fill out this form and we will be in touch </span>
+	</p>
+					
+        <form name="myForm" enctype="multipart/form-data" action="https://measurableimpact.mydmportal.com/sw/swchannel/Registration/internet/RegistrationSubmit.cfm?SWSESSIONID=9621CEF28AEFB8FECE38E63E0B945E13&amp;SWCampaignID=2985633" method="post">
+            
+	<input id="CSRFToken" name="CSRFToken" type="hidden" value="">
+
+<script>
+///Insert CSRF Token to DOM
+function addCSRF(tokenID){
+	var temp = document.getElementById(tokenID);
+
+	var forms = document.forms;
+	for (var i = 0;i<forms.length;i++){
+		var csrfToken = temp.cloneNode();
+		csrfToken.id = temp.id + i;
+		if (forms[i].method.toLowerCase() == "post" && forms[i].CSRFToken == undefined) {
+			forms[i].appendChild(csrfToken);
+		}
+	}
+}
+
+addCSRF('CSRFToken');
+</script> 
+
+    <table border="0" cellpadding="3">
+        
+        
+            <input type="Hidden" name="RegPageID" value="6209711">
+        
+        <input type="Hidden" name="FormAppID" value="-1">
+        
+        
+        
+        <input type="Hidden" name="ProductCCID" value="">
+        <input type="Hidden" name="ProductMasterID" value="">
+        <input type="Hidden" name="CustomPageID" value="">
+        <input type="Hidden" name="ReferDisplayName" value="">
+        
+        
+                    <tbody><tr valign="TOP">
+                        <td nowrap="">
+                            <span class="normal_bold_text" _msthash="1386788" _msttexthash="145847"> <span class="normal_error_text" _istranslated="1">*</span> First Name </span>
+                        
+                            <br>
+                        
+                            <span class="normal_text">
+                            
+                                <input type="Text" size="30" class="FormTextBox" onfocus="this.className=&#39;FormTextBoxFocus&#39;;" onblur="this.className=&#39;FormTextBox&#39;;" name="firstname" value="" vreq="1" vmsg="" vlbl="First Name" vtyp="text" vreg="/.*/" vclass="FormTextBox">
+                            
+                            </span>
+                        </td>
+                    </tr>
+                
+                    <tr valign="TOP">
+                        <td nowrap="">
+                            <span class="normal_bold_text" _msthash="1386983" _msttexthash="122707"> <span class="normal_error_text" _istranslated="1">*</span> Last Name </span>
+                        
+                            <br>
+                        
+                            <span class="normal_text">
+                            
+                                <input type="Text" size="30" class="FormTextBox" onfocus="this.className=&#39;FormTextBoxFocus&#39;;" onblur="this.className=&#39;FormTextBox&#39;;" name="lastname" value="" vreq="1" vmsg="" vlbl="Last Name" vtyp="text" vreg="/.*/" vclass="FormTextBox">
+                            
+                            </span>
+                        </td>
+                    </tr>
+                
+                    <tr valign="TOP">
+                        <td nowrap="">
+                            <span class="normal_bold_text" _msthash="1387178" _msttexthash="218257"> <span class="normal_error_text" _istranslated="1">*</span> Email Address </span>
+                        
+                            <br>
+                        
+                            <span class="normal_text">
+                            
+                                <input type="Email" size="30" class="FormTextBox" onfocus="this.className=&#39;FormTextBoxFocus&#39;;" onblur="this.className=&#39;FormTextBox&#39;;" name="email" value="" vreq="1" vmsg="" vlbl="Email Address" vtyp="email" vreg="/^(([^&lt;&gt;()[\]\\.,;:\s@\&quot;]+(\.[^&lt;&gt;()[\]\\.,;:\s@\&quot;]+)*)|(\&quot;.+\&quot;))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/" vclass="FormTextBox">
+                            
+                            </span>
+                        </td>
+                    </tr>
+                
+                    <tr valign="TOP">
+                        <td nowrap="">
+                            <span class="normal_bold_text" _msthash="1387373" _msttexthash="195338"> <span class="normal_error_text" _istranslated="1">*</span> Phone Number </span>
+                        
+                            <br>
+                        
+                            <span class="normal_text">
+                            
+												<input type="Text" size="30" name="phone" value="" class="FormPhoneBox" onfocus="this.className=&#39;FormPhoneBoxFocus&#39;;" onblur="this.className=&#39;FormPhoneBox&#39;;" maxlength="30" vreq="1" vmsg="" vlbl="Phone Number" vtyp="text" vreg="/.*/" vclass="FormPhoneBox">
+											
+                            </span>
+                        </td>
+                    </tr>
+                
+                    <tr valign="TOP">
+                        <td nowrap="">
+                            <span class="normal_bold_text" _msthash="1387568" _msttexthash="109707"> <span class="normal_error_text" _istranslated="1">*</span> Company </span>
+                        
+                            <br>
+                        
+                            <span class="normal_text">
+                            
+                                <input type="Text" size="30" class="FormTextBox" onfocus="this.className=&#39;FormTextBoxFocus&#39;;" onblur="this.className=&#39;FormTextBox&#39;;" name="companyname" value="" vreq="1" vmsg="" vlbl="Company" vtyp="text" vreg="/.*/" vclass="FormTextBox">
+                            
+                            </span>
+                        </td>
+                    </tr>
+                
+        <tr valign="top">
+            <td colspan="2">
+                <span id="check_fields_here" style="display: none;">
+                <input type="text" name="RegSubField_0001" value="">
+                </span>
+                <table cellpadding="0" cellspacing="0" width="100%" border="0" class="list_row_bg1"><tbody><tr valign="top"><td><img src="./assets/blank.gif" width="10" height="1" hspace="0" vspace="0"></td></tr></tbody></table>
+            </td>
+        </tr>
+        <tr valign="top">
+    	
+        	<td colspan="2">
+        
+                <span id="SubmitButtonDiv">
+                <input name="btn_submit" type="Image" alt="Submit" src="./assets/6140183_submitBtn.jpg" onclick="CheckThisForErrors();HideSubmit();">
+                </span><br>
+                
+                    <table><tbody><tr><td>
+                    <span class="normal_small_text" _msthash="3244917" _msttexthash="274586"> <span class="normal_error_text" _istranslated="1">*</span> Required Fields </span>
+                    </td></tr></tbody></table>
+                
+            </td>
+            
+        </tr>
+        
+    </tbody></table>
+    </form>
+    </div>
+			</div>
+		</div>
+	</div>
+
+	<div class="footerSec">
+		<div class="footerSecAdd">
+			<div class="mainWraperCont">
+				<div class="ibmLogo"><img src="./assets/davydnorris@olivegroveit.com.au_BPMark_web_base.jpg" border="0"></div>
+
+				<div class="addressPan" _msthash="3190057" _msttexthash="7114861">Measurable Impact<br _istranslated="1"> </br> Level 2, 11 York St<br _istranslated="1"> </br> sandeep@measurableimpact.com.au<br _istranslated="1"> </br> 0423826702<br _istranslated="1"> </br> measurableimpact.com.au/maximo</div>
+			</div>
+		</div>
+
+		<div class="footerSecCopy">
+			<p>
+		<span id="Field117749" _msthash="2543866" _msttexthash="951704"> copyright © 2021 - all rights reserved </span>
+	</p>
+		</div>
+
+		<div class="footerSecDisclaim">
+			<div class="mainWraper">
+				<p>
+		<span id="Field117751" _msthash="3019536" _msttexthash="347157291"> IBM, IBM logo, ibm.com, and IBM Business Partner Icons are trademarks or registered trademarks of the International Trading Machinecorporation in the United States, other countries, or both. A current list of IBM trademarks is available <a href="https://measurableimpact.mydmportal.com/sw/swchannel/registration/internet/www.ibm.com/legal/copytrade.html" target="_blank" _istranslated="1">on</a> the web www.ibm.com/legal/copytrade.html "Copyright and Trademark Information". Other company, product and service names may be trademarks or service marks of others. The IBM products and/or services described here are provided by an IBM Business Partner who is an independent reseller/dealer. It is only the responsibility of ibm business partner to meet any condition or offer mentioned here. IBM is not responsible for the actions or performance of IBM Business Partners. IBM Business Partner special offers, products and prices can be withdrawn or revised at any time without prior notice. </span>
+	</p>
+			</div>
+		</div>
+	</div>
+</div>
+
+		<span id="Field117752">
+		
+
+
+		<script>
+$(function(){
+	setTimeout(function(){
+		$('.banSec a').removeClass('allLinks');
+		$('.banSec a').removeClass('clickIcon');
+		
+		/*comment below line to use direct link*/
+		$('.banSec a').addClass('targetform'); 
+	}, 1500);
+});	
+</script>
+<style type="text/css">.outerWraper .banSec h2 {
+    color: #ffffff;
+}
+.outerWraper .banSec p {
+    color: #ffffff;
+}
+
+
+.outerWraper .banSec {
+    padding: 75px 0 92px;
+    margin: 0;
+    background: url(assets/081621_power_10_banner_lp.jpg) no-repeat 50% 0!important;
+
+}</style>
+<!--Section Dividers CSS-->
+<style type="text/css">.outerWraper .contSecTopLftIn_new{
+	border-bottom: 1px solid #C5C5C5!important;
+
+
+
+
+<!--
+.outerWraper .contSecTopLftIn_new:nth-child(2){
+border-bottom:none!important;
+}
+.outerWraper .contSecTopLftIn_new:nth-child(3){
+border-bottom:none!important;
+}
+
+-->
+.outerWraper .contSecTopLftIn_new:nth-child(4){
+border-bottom:none!important;
+
+
+	}
+</style>
+		</span>
+	</span>
+
+<div class="dropBox videoArea" id="vidDiv" _msthidden="1" style="display: none;">
+	<div class="dropInner" _msthidden="1"><a class="closeBtn" href="https://measurableimpact.mydmportal.com/sw/swchannel/registration/internet/registration.cfm?RegPageID=6209711&amp;SWCAMPAIGNID=2985633#" _msthash="275041" _msttexthash="10920" _msthidden="1">x</a>
+
+		<div class="vidWrap"><iframe allowfullscreen="" frameborder="0" height="100%" id="youVid" src="./assets/saved_resource.html" width="100%"></iframe></div>
+	</div>
+</div>
+
+<div class="dropBox pageModal" id="popForm" _msthidden="1" style="display: none;">
+	<div class="dropInner" _msthidden="1"><a class="actionPageClose" href="https://measurableimpact.mydmportal.com/sw/swchannel/registration/internet/registration.cfm?RegPageID=6209711&amp;SWCAMPAIGNID=2985633#" _msthash="311688" _msttexthash="10920" _msthidden="1">x</a>
+
+		<div class="scrollContent" style="overflow: visible; height: auto;"><iframe allowfullscreen="" frameborder="0" height="100%" id="iframe_id" src="./assets/saved_resource(1).html" width="100%"></iframe></div>
+	</div>
+</div>
+<style type="text/css">input.FormTextBoxFocus, input.FormTextAreaBoxFocus, input.FormSelectBoxFocus,  input.FormPhoneBoxFocus,input.FormAreaCodeBoxFocus {
+    background-color: #ffcccb;
+}</style> 
+
+
+<!--footer start --></td>
+		</tr>
+		<tr>
+			<td class="outbg" style="text-align: center;" valign="top"><span style="line-height: 20.8px;"></span></td>
+		</tr>
+	</tbody>
+</table>
+<!-- Footer End -->
+<script type="text/javascript"> 
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www."); 
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E")); 
+ </script><script src="./assets/ga.js" type="text/javascript"></script>
+<script type="text/javascript">
+function Sendanalytics(field, Acct)
+ {
+ var pageTracker = _gat._getTracker(Acct);
+ pageTracker._setDomainName("none");
+ pageTracker._setAllowLinker(true);
+ pageTracker._initData(); 
+if (typeof(field) == "undefined") { pageTracker._trackPageview(document.title); } else { if (field.length > 1) {  pageTracker._trackPageview(field);}}}
+Sendanalytics(window.AnalyticsTrackingGlobal,"UA-75214-1");</script>
+
+   <script type="text/javascript"> 
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','gaSW');
+    gaSW('create', 'UA-74358873-1');
+gaSW('require', 'displayfeatures');
+gaSW('set', 'dimension1', pageId);
+gaSW('set', 'dimension2',managedPageId);
+gaSW('set', 'dimension3', siteId );
+gaSW('set', 'dimension4', bundleId);
+gaSW('set', 'dimension5', managedPageSiteId);
+gaSW('send', 'pageview');</script>
+
+<script type="text/javascript">
+ReplaceNumbers('sw');</script>
+
+
+<script language="JavaScript">
+	CheckForDisplay();
+</script>
+
+
+<script>
+//Prepare a dictionary for key (resource name) to value (text) for js localization
+var arrStrings = 
+{
+	"Scripts__Validation__Is_Required": "is required",
+	"Scripts__Validation__Field_Errors_1": "The following field(s) have errors:",
+	"Scripts__Validation__Field_Errors_2": "Please correct them and re-send your form.",
+	"Scripts__Validation__Error_Decimal_Multiple_Point": "You can only have 1 decimal point in your number.  Please recheck your value.",
+	"Scripts__Validation__Is_Not_A_Valid_Date": "is not in a valid date"
+}
+</script>
+
+<script>
+//Prepare a dictionary for key (resource name) to value (text) for js localization
+var arrStrings = 
+{
+	"Scripts__Validation__Is_Required": "is required",
+	"Scripts__Validation__Field_Errors_1": "The following field(s) have errors:",
+	"Scripts__Validation__Field_Errors_2": "Please correct them and re-send your form.",
+	"Scripts__Validation__Error_Decimal_Multiple_Point": "You can only have 1 decimal point in your number.  Please recheck your value.",
+	"Scripts__Validation__Is_Not_A_Valid_Date": "is not in a valid date"
+}
+</script>
+<script language="JavaScript">
+var fld1Arr = new Array();
+fld1Arr[0] = new Array();
+fld1Arr[0]["field"] = "firstname";
+fld1Arr[0]["label"] = "First Name";
+fld1Arr[0]["vType"] = "text";
+fld1Arr[0]["message"] = "";
+fld1Arr[0]["maxLength"] = "";
+fld1Arr[0]["minLength"] = "";
+fld1Arr[0]["min"] = "";
+fld1Arr[0]["max"] = "";
+fld1Arr[0]["regex"] = /.*/;
+fld1Arr[0]["required"] = "1";
+fld1Arr[1] = new Array();
+fld1Arr[1]["field"] = "lastname";
+fld1Arr[1]["label"] = "Last Name";
+fld1Arr[1]["vType"] = "text";
+fld1Arr[1]["message"] = "";
+fld1Arr[1]["maxLength"] = "";
+fld1Arr[1]["minLength"] = "";
+fld1Arr[1]["min"] = "";
+fld1Arr[1]["max"] = "";
+fld1Arr[1]["regex"] = /.*/;
+fld1Arr[1]["required"] = "1";
+fld1Arr[2] = new Array();
+fld1Arr[2]["field"] = "email";
+fld1Arr[2]["label"] = "Email Address";
+fld1Arr[2]["vType"] = "email";
+fld1Arr[2]["message"] = "";
+fld1Arr[2]["maxLength"] = "";
+fld1Arr[2]["minLength"] = "";
+fld1Arr[2]["min"] = "";
+fld1Arr[2]["max"] = "";
+fld1Arr[2]["regex"] = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+fld1Arr[2]["required"] = "1";
+fld1Arr[3] = new Array();
+fld1Arr[3]["field"] = "areacode";
+fld1Arr[3]["label"] = "Phone Number";
+fld1Arr[3]["vType"] = "text";
+fld1Arr[3]["message"] = "";
+fld1Arr[3]["maxLength"] = "";
+fld1Arr[3]["minLength"] = "";
+fld1Arr[3]["min"] = "";
+fld1Arr[3]["max"] = "";
+fld1Arr[3]["regex"] = /.*/;
+fld1Arr[3]["required"] = "1";
+fld1Arr[4] = new Array();
+fld1Arr[4]["field"] = "phone";
+fld1Arr[4]["label"] = "Phone Number";
+fld1Arr[4]["vType"] = "text";
+fld1Arr[4]["message"] = "";
+fld1Arr[4]["maxLength"] = "";
+fld1Arr[4]["minLength"] = "";
+fld1Arr[4]["min"] = "";
+fld1Arr[4]["max"] = "";
+fld1Arr[4]["regex"] = /.*/;
+fld1Arr[4]["required"] = "1";
+fld1Arr[5] = new Array();
+fld1Arr[5]["field"] = "companyname";
+fld1Arr[5]["label"] = "Company";
+fld1Arr[5]["vType"] = "text";
+fld1Arr[5]["message"] = "";
+fld1Arr[5]["maxLength"] = "";
+fld1Arr[5]["minLength"] = "";
+fld1Arr[5]["min"] = "";
+fld1Arr[5]["max"] = "";
+fld1Arr[5]["regex"] = /.*/;
+fld1Arr[5]["required"] = "1";
+InitValidation("myForm",fld1Arr,1);</script> 
+    <script>UpdateProvinces('/sw/swchannel/Registration/internet/GetProvincesForCountry.cfm?SWSESSIONID=9621CEF28AEFB8FECE38E63E0B945E13&CountryId=4' + '&SelectedStateID=');</script>
+    
+<script>
+if (parent.resizeCaller)
+{
+	parent.resizeCaller();
+	if(parent.parent.resizeCaller)
+	{
+		parent.parent.resizeCaller();
+	}
+}
+</script><div id="vBubble" class="ValidationBubble"></div></body></html>

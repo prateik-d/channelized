@@ -110,6 +110,16 @@
                         </li>
                     @endhasanyroles
                     @hasrole('vendor')
+
+
+                        <li>
+                            <a href="{{ route(Auth::user()->roles[0]->name.'.vtemplatePage') }}" class="{{ (request()->routeIs('vendor.vtemplatePage*') ? 'active' : '') }}">
+                                <i class="side-menu-icon event-icon"> </i>
+                               
+                                <div class="side-menu-name">Landing Page</div>
+                            </a>
+                        </li>
+
                         <li class="nav-item">
                             <a href="{{ route(Auth::user()->roles[0]->name.'.events.index') }}" class="{{ (request()->routeIs('vendor.events*') ? 'active' : '') }}">
                                 <i class="side-menu-icon event-icon"> </i>
@@ -146,13 +156,6 @@
                                 <div class="side-menu-name">Technical Education {!! ($vTechnical->count() > 0 ? '<span>'.$vTechnical->count().'</span>' : null) !!}</div>
                             </a>
                         </li>
-                        <li>
-                            <a href="{{ route(Auth::user()->roles[0]->name.'.vtemplatePage') }}" class="{{ (request()->routeIs('vendor.vtemplatePage*') ? 'active' : '') }}">
-                                <i class="side-menu-icon event-icon"> </i>
-                               
-                                <div class="side-menu-name">Template</div>
-                            </a>
-                        </li>
                        <!--  <li>
                             <a href="">
                                 <i class="side-menu-icon announcements-icon"> </i>
@@ -167,6 +170,15 @@
                         </li> -->
                     @endhasrole
                     @hasrole('partner')
+
+                        <li>
+                            <a href="{{ route(Auth::user()->roles[0]->name.'.ptemplatePage') }}" class="{{ (request()->routeIs('partner.ptemplatePage*') ? 'active' : '') }}">
+                                <i class="side-menu-icon event-icon"> </i>
+                               
+                                <div class="side-menu-name">Landing Page</div>
+                            </a>
+                        </li>
+
                         <li>
                             <a href="{{ route(Auth::user()->roles[0]->name.'.events') }}" class="{{ (request()->routeIs('partner.events*') ? 'active' : '') }}">
                                 <i class="side-menu-icon event-icon"> </i>
@@ -243,13 +255,6 @@
                                 </div>
                             </a>
                         </li>
-                        <li>
-                            <a href="{{ route(Auth::user()->roles[0]->name.'.ptemplatePage') }}" class="{{ (request()->routeIs('partner.ptemplatePage*') ? 'active' : '') }}">
-                                <i class="side-menu-icon event-icon"> </i>
-                               
-                                <div class="side-menu-name">Template</div>
-                            </a>
-                        </li>
                         <!-- <li>
                             <a href="#">
                                 <i class="side-menu-icon announcements-icon"> </i>
@@ -299,7 +304,7 @@
                         <li class="nav-item">
                             <a href="{{ route(Auth::user()->roles[0]->name.'.templatePage') }}" class="{{ (request()->routeIs('admin.templatePage*') ? 'active' : '') }}">
                                 <i class="side-menu-icon event-icon"> </i>
-                                <div class="side-menu-name">Templates</div>
+                                <div class="side-menu-name">Landing Page</div>
 
                             </a>
                         </li>

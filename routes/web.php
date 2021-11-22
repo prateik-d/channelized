@@ -74,23 +74,22 @@ Route::prefix('admin')->middleware(['auth','auth.admin'])->name('admin.')->group
     Route::get('template', 'PageTemplateController@index')->name('templatePage');
     Route::get('template/deactivate/{id}', 'PageTemplateController@deactivate')->name('templatePage.deactivate');
     Route::get('template/inactivate/{id}', 'PageTemplateController@inactivate')->name('templatePage.inactivate');
-    Route::get('template/deactivated/', 'PageTemplateController@deactivated')->name('templatePage.deactivated');
-    // Route::get('template/create', 'TemplatePageController@create')->name('templatePage.create');
-    // Route::post('template/create', 'TemplatePageController@create')->name('templatePage.create');
-    // Route::get('template/view/{id}', 'TemplatePageController@show')->name('templatePage.show');
-    // Route::get('template/edit/{uid}', 'TemplatePageController@edit')->name('templatePage.edit');
-    // Route::post('template/update', 'TemplatePageController@update')->name('templatePage.update');
-    // Route::get('template/delete/{id}', 'TemplatePageController@destroy')->name('templatePage.delete');
-    // Route::get('template/deleted/', 'TemplatePageController@deleted')->name('templatePage.deleted');
-    // Route::get('template/restore/{id}', 'TemplatePageController@restore')->name('templatePage.restore');
+    Route::get('template/deactivated/', 'PageTemplateController@deactivated')->name('templatePage.deactivated');    
+    Route::get('template/create', 'PageTemplateController@create')->name('templatePage.create');
+    Route::post('template/create', 'PageTemplateController@create')->name('templatePage.create');
+
+
 });
 
 Route::post('events/{event}','EventController@partner_event_readmore')->name('events.readmore');
 Route::post('event/{event}','EventController@partner_event_viewagenda')->name('event.view');
 
+Route::post('contact-form', 'PageTemplateController@contact_form')->name('templatePage.contact_form');
+
+
 Route::prefix('partner')->middleware(['auth','auth.partner'])->name('partner.')->group(function(){
     Route::get('home', 'HomeController@partner')->name('home');
-//    Route::resource('events','EventController', ['except'=>['show']]);
+    //    Route::resource('events','EventController', ['except'=>['show']]);
     Route::match(['get', 'post'], 'events', 'EventController@partner_events')->name('events');
 
     Route::post('search','EventController@globalSearch')->name('search');
@@ -128,11 +127,13 @@ Route::prefix('partner')->middleware(['auth','auth.partner'])->name('partner.')-
     Route::get('template', 'PageTemplateController@partner_index')->name('ptemplatePage');
     Route::post('template/added', 'PageTemplateController@partner_added')->name('ptemplatePage.added');
     Route::get('template/create/{id}', 'PageTemplateController@partner_create')->name('ptemplatePage.create');
-    Route::get('template/view/{id}', 'PageTemplateController@partner_show')->name('ptemplatePage.show');
+    // Route::get('template/view/{id}', 'PageTemplateController@partner_show')->name('ptemplatePage.show');
     Route::post('template/logo_upload', 'PageTemplateController@partner_logo_upload')->name('ptemplatePage.logo_upload');
     Route::post('template/logo_upload_edit', 'PageTemplateController@partner_logo_upload_edit')->name('ptemplatePage.logo_upload_edit');
+    Route::post('template/pdf_upload', 'PageTemplateController@partner_pdf_upload')->name('ptemplatePage.pdf_upload');
     Route::get('template/edit/{uid}', 'PageTemplateController@partner_edit')->name('ptemplatePage.edit');
     Route::post('template/edit', 'PageTemplateController@partner_update')->name('ptemplatePage.update');
+    Route::get('template/deactivate/{id}', 'PageTemplateController@partner_deactivate')->name('ptemplatePage.deactivate');
 });
 
 Route::prefix('vendor')->middleware(['auth','auth.vendor'])->name('vendor.')->group(function(){
@@ -158,10 +159,12 @@ Route::prefix('vendor')->middleware(['auth','auth.vendor'])->name('vendor.')->gr
     Route::get('template', 'PageTemplateController@vendor_index')->name('vtemplatePage');
     Route::post('template/added', 'PageTemplateController@vendor_added')->name('vtemplatePage.added');
     Route::get('template/create/{id}', 'PageTemplateController@vendor_create')->name('vtemplatePage.create');
-    Route::get('template/view/{id}', 'PageTemplateController@vendor_show')->name('vtemplatePage.show');
     Route::post('template/logo_upload', 'PageTemplateController@vendor_logo_upload')->name('vtemplatePage.logo_upload');
     Route::post('template/logo_upload_edit', 'PageTemplateController@vendor_logo_upload_edit')->name('vtemplatePage.logo_upload_edit');
+    Route::post('template/pdf_upload', 'PageTemplateController@vendor_pdf_upload')->name('vtemplatePage.pdf_upload');
     Route::get('template/edit/{uid}', 'PageTemplateController@vendor_edit')->name('vtemplatePage.edit');
     Route::post('template/edit', 'PageTemplateController@vendor_update')->name('vtemplatePage.update');
-    Route::get('template/delete/{id}', 'PageTemplateController@vendor_deactivate')->name('vtemplatePage.deactivate');
+    Route::get('template/deactivate/{id}', 'PageTemplateController@vendor_deactivate')->name('vtemplatePage.deactivate');
 });
+Route::get('vendor/template/view/{id}', 'PageTemplateController@vendor_show')->name('vtemplatePage.show');
+Route::get('partner/template/view/{id}', 'PageTemplateController@partner_show')->name('ptemplatePage.show');

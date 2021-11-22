@@ -1,0 +1,1085 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script async="" src="../../../public/templates/master_templates/lp/assets/analytics.js"></script><script type="text/javascript" src="../../../public/templates/master_templates/lp/assets/StandardFuncs.js"></script><script src="../../../public/templates/master_templates/lp/assets/provinces.js"></script><script src="../../../public/templates/master_templates/lp/assets/jquery.min.js"></script><meta name="description" content=""><meta name="keywords" content=""><!-- Copyright (c) StructuredWeb 1999-2004 -->
+	<link href="../../../public/templates/master_templates/lp/assets/theme45951.css" rel="stylesheet" type="text/css" />
+	<link href="../../../public/templates/master_templates/lp/assets/inline.css" rel="stylesheet" type="text/css" />
+	<title _msthash="149916" _msttexthash="588445">LP - Power 10 - Introducing E1080</title>
+	<script src="../../../public/templates/master_templates/lp/assets/validationLocalized.js" type="text/javascript"></script>
+	<link href="../../../public/templates/master_templates/lp/assets/validation.css" rel="stylesheet" type="text/css" /><meta http-equiv="Pragma" content="no-cache"><meta http-equiv="Expires" content="-1"><script type="text/javascript" src="../../../public/templates/master_templates/lp/assets/error_check.js"></script>
+</head>
+<body>
+<div style="display:none;">&nbsp;</div>
+<script language="JavaScript">
+var AnalyticsTrackingSite='Forms/LP - Power 10 - Introducing E1080/';
+var AnalyticsTrackingGlobal='Forms/LP - Power 10 - Introducing E1080/';
+var AnalyticsTrackingCategory='Forms/LP - Power 10 - Introducing E1080/';
+var customUserId = '';
+var siteId = '91438';
+var bundleId = '10422';
+var pageId = '6209711';
+var managedPageId = '6140183';
+var managedPageSiteId = '79016';
+
+
+
+
+</script><!-- Don't decode HTML because it will block our js and forms won't display correctly --><script language="JavaScript">
+  function GoToNextField(FieldValue,MaxLength,FieldName)
+  {
+   var FVLength = FieldValue.length;
+   
+   if (FVLength >= MaxLength)
+   {
+    var numberofel = document.myForm.elements.length-1;
+    
+    //find the elementid that matches the name and then find 
+    //the next element on the form and set the focus on it
+    for(var i = 0; i <= numberofel; i++)
+    {
+     if(document.myForm.elements[i].name == FieldName)
+     {
+      nextelement = i+1;
+      document.myForm.elements[nextelement].focus();
+     }
+    }
+    
+   }
+  }
+  
+	function trimAll(sString) 
+	{
+		while (sString.substring(0,1) == ' ')
+		{
+		sString = sString.substring(1, sString.length);
+		}
+		while (sString.substring(sString.length-1, sString.length) == ' ')
+		{
+		sString = sString.substring(0,sString.length-1);
+		}
+		return sString;
+	}
+  
+	function CheckGroupAccessCode() 
+	{
+		document.myForm.SelfRegistrationPassword.value = trimAll(document.myForm.SelfRegistrationPassword.value)
+		
+		if (document.myForm.SelfRegistrationPassword.value.length > 0)
+		{
+		 	
+			var url = "/sw/swchannel/Registration/internet/CheckGroupAccessCode.cfm?SWSESSIONID=9621CEF28AEFB8FECE38E63E0B945E13&GroupAccessCode=" + document.myForm.SelfRegistrationPassword.value + "&ms=" + new Date().getTime() // The server-side script
+			
+			http.open("GET", url, true);
+			http.onreadystatechange = handleUpdateCalResponse;
+			http.send(null);
+		}
+	}
+
+	function handleUpdateCalResponse() 
+	{
+		if (http.readyState == 4) 
+		{
+			result = '';
+			result = http.responseText
+			if (result.indexOf('VALID GROUP ACCESS CODE') == -1)
+			{
+				document.getElementById("InvalidGroupAccessCode").innerHTML="Error: This is not a valid code";
+				document.myForm.SelfRegistrationPassword.focus();
+				document.myForm.SelfRegistrationPassword.select();
+			}
+			else
+			{
+				document.getElementById("InvalidGroupAccessCode").innerHTML=result; 
+			}
+		}
+	}
+	
+	function RequiredGroupAccessCode()
+	{
+		HTMLvalue = document.getElementById("InvalidGroupAccessCode").innerHTML;
+		
+		if (HTMLvalue.length > 0 && HTMLvalue.indexOf('Error') == -1)
+		{
+			//No error found
+			//alert('no error' + HTMLvalue);
+			document.myForm.HiddenSelfRegistrationPassword.value = "OK";
+		}
+	}
+	
+	function HideSubmit()
+	{
+		document.getElementById("SubmitButtonDiv").style.display = "none";
+		
+		setTimeout('ShowSubmit()', 3000);
+	}
+	
+	function ShowSubmit()
+	{
+		document.getElementById("SubmitButtonDiv").style.display = "block";
+	}
+	
+	var hash = {
+	  'exe'  : 1
+	};
+	
+	function CheckFileType(filename)
+	{
+		var ext = filename.substring(filename.lastIndexOf('.') + 1);
+		if(ext == "exe")
+		{
+			alert("You cannot upload executable (exe) files! Please browse and select a different file.");
+		}
+	}
+	
+	function checkTextArea(checkID)
+	{
+		checklen = eval('document.myForm.RegSubField_' + checkID + '.value.length');
+		
+		if(checklen > 3900)
+		{
+			eval('document.getElementById("TextAreaDesc_' + checkID + '").style.display = "block"');
+		}
+		
+		errText = '<span class="normal_error_text">WARNING: This content is currently <strong>' + checklen + ' and you cannot go over 4000 characters in this field. All characters over 4000 will be trimmed off.';
+		eval('document.getElementById("TextAreaDesc_' + checkID + '").innerHTML = errText');
+	}
+	function unsubShouldNotSubmit()
+	{
+		alert("This is a test only.  The subscription change will not be processed.");
+	}
+ </script><script language="JavaScript">
+<!-- Original:  Richard Gorremans (RichardG@spiritwolfx.com) -->
+<!-- Web Site:  http://www.spiritwolfx.com -->
+
+<!-- This script and many more are available free online at -->
+<!-- The JavaScript Source!! http://javascript.internet.com -->
+
+<!-- Begin
+// Check browser version
+var isNav4 = false, isNav5 = false, isIE4 = false
+var strSeperator = "/"; 
+// If you are using any Java validation on the back side you will want to use the / because 
+// Java date validations do not recognize the dash as a valid date separator.
+var vDateType = 3; // Global value for type of date format
+//                1 = mm/dd/yyyy
+//                2 = yyyy/dd/mm  (Unable to do date check at this time)
+//                3 = dd/mm/yyyy
+var vYearType = 4; //Set to 2 or 4 for number of digits in the year for Netscape
+var vYearLength = 2; // Set to 4 if you want to force the user to enter 4 digits for the year before validating.
+var err = 0; // Set the error code to a default of zero
+if(navigator.appName == "Netscape") 
+{
+	if (navigator.appVersion < "5") 
+	{
+		isNav4 = true;
+		isNav5 = false;
+	}
+	else
+	if (navigator.appVersion > "4") 
+	{
+		isNav4 = false;
+		isNav5 = true;
+	}
+}
+else 
+{
+	isIE4 = true;
+}
+
+function DateFormat(vDateName, vDateValue, e, dateCheck, dateType) 
+{
+	vDateType = dateType;
+	// vDateName = object name
+	// vDateValue = value in the field being checked
+	// e = event
+	// dateCheck 
+	// True  = Verify that the vDateValue is a valid date
+	// False = Format values being entered into vDateValue only
+	// vDateType
+	// 1 = mm/dd/yyyy
+	// 2 = yyyy/mm/dd
+	// 3 = dd/mm/yyyy
+	//Enter a tilde sign for the first number and you can check the variable information.
+	
+	if (vDateValue == "~") 
+	{
+		alert("AppVersion = "+navigator.appVersion+" \nNav. 4 Version = "+isNav4+" \nNav. 5 Version = "+isNav5+" \nIE Version = "+isIE4+" \nYear Type = "+vYearType+" \nDate Type = "+vDateType+" \nSeparator = "+strSeperator);
+		vDateName.value = "";
+		vDateName.focus();
+		return true;
+	}
+	
+	var whichCode = (window.Event) ? e.which : e.keyCode;
+	// Check to see if a seperator is already present.
+	// bypass the date if a seperator is present and the length greater than 8
+	
+	if (vDateValue.length > 8 && isNav4) 
+	{
+		if ((vDateValue.indexOf("-") >= 1) || (vDateValue.indexOf("/") >= 1))
+		return true;
+	}
+	
+	//Eliminate all the ASCII codes that are not valid
+	var alphaCheck = " abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ/-";
+	
+	if (alphaCheck.indexOf(vDateValue) >= 1) 
+	{
+		if (isNav4) 
+		{
+			vDateName.value = "";
+			vDateName.focus();
+			vDateName.select();
+			return false;
+		}
+		else 
+		{
+			vDateName.value = vDateName.value.substr(0, (vDateValue.length-1));
+			return false;
+		}
+	}
+	
+	if (whichCode == 8) //Ignore the Netscape value for backspace. IE has no value
+		return false;
+	else 
+	{
+		//Create numeric string values for 0123456789/
+		//The codes provided include both keyboard and keypad values
+		var strCheck = '47,48,49,50,51,52,53,54,55,56,57,58,59,95,96,97,98,99,100,101,102,103,104,105';
+		if (strCheck.indexOf(whichCode) != -1) 
+		{
+			if (isNav4) 
+			{
+				if (((vDateValue.length < 6 && dateCheck) || (vDateValue.length == 7 && dateCheck)) && (vDateValue.length >=1)) 
+				{
+					alert("Invalid Date\nPlease Re-Enter");
+					vDateName.value = "";
+					vDateName.focus();
+					vDateName.select();
+					return false;
+				}
+				
+				if (vDateValue.length == 6 && dateCheck) 
+				{
+					var mDay = vDateName.value.substr(2,2);
+					var mMonth = vDateName.value.substr(0,2);
+					var mYear = vDateName.value.substr(4,4)
+					//Turn a two digit year into a 4 digit year
+					if (mYear.length == 2 && vYearType == 4) 
+					{
+						var mToday = new Date();
+						//If the year is greater than 30 years from now use 19, otherwise use 20
+						var checkYear = mToday.getFullYear() + 30; 
+						var mCheckYear = '20' + mYear;
+						if (mCheckYear >= checkYear)
+						mYear = '19' + mYear;
+						else
+						mYear = '20' + mYear;
+					}
+				
+				var vDateValueCheck = mMonth+strSeperator+mDay+strSeperator+mYear;
+				
+				if (!dateValid(vDateValueCheck)) 
+				{
+					alert("Invalid Date\nPlease Re-Enter");
+					vDateName.value = "";
+					vDateName.focus();
+					vDateName.select();
+					return false;
+				}
+			
+			return true;
+		}
+else {
+// Reformat the date for validation and set date type to a 1
+if (vDateValue.length >= 8  && dateCheck) {
+if (vDateType == 1) // mmddyyyy
+{
+	var mDay = vDateName.value.substr(2,2);
+	var mMonth = vDateName.value.substr(0,2);
+	var mYear = vDateName.value.substr(4,4)
+	vDateName.value = mMonth+strSeperator+mDay+strSeperator+mYear;
+}
+if (vDateType == 2) // yyyymmdd
+{
+	var mYear = vDateName.value.substr(0,4)
+	var mMonth = vDateName.value.substr(4,2);
+	var mDay = vDateName.value.substr(6,2);
+	vDateName.value = mYear+strSeperator+mMonth+strSeperator+mDay;
+}
+if (vDateType == 3) // ddmmyyyy
+{
+	var mMonth = vDateName.value.substr(2,2);
+	var mDay = vDateName.value.substr(0,2);
+	var mYear = vDateName.value.substr(4,4)
+	vDateName.value = mDay+strSeperator+mMonth+strSeperator+mYear;
+}
+//Create a temporary variable for storing the DateType and change
+//the DateType to a 1 for validation.
+var vDateTypeTemp = vDateType;
+vDateType = 1;
+var vDateValueCheck = mMonth+strSeperator+mDay+strSeperator+mYear;
+if (!dateValid(vDateValueCheck)) 
+{
+	alert("Invalid Date\nPlease Re-Enter");
+	vDateType = vDateTypeTemp;
+	vDateName.value = "";
+	vDateName.focus();
+	vDateName.select();
+	return false;
+}
+vDateType = vDateTypeTemp;
+return true;
+}
+else {
+if (((vDateValue.length < 8 && dateCheck) || (vDateValue.length == 9 && dateCheck)) && (vDateValue.length >=1)) {
+alert("Invalid Date\nPlease Re-Enter");
+vDateName.value = "";
+vDateName.focus();
+vDateName.select();
+return false;
+         }
+      }
+   }
+}
+else {
+// Non isNav Check
+if (((vDateValue.length < 8 && dateCheck) || (vDateValue.length == 9 && dateCheck)) && (vDateValue.length >=1)) 
+{
+	alert("Invalid Date\nPlease Re-Enter");
+	vDateName.value = "";
+	vDateName.focus();
+	return true;
+}
+// Reformat date to format that can be validated. mm/dd/yyyy
+if (vDateValue.length >= 8 && dateCheck) {
+// Additional date formats can be entered here and parsed out to
+// a valid date format that the validation routine will recognize.
+if (vDateType == 1) // mm/dd/yyyy
+{
+	var mMonth = vDateName.value.substr(0,2);
+	var mDay = vDateName.value.substr(3,2);
+	var mYear = vDateName.value.substr(6,4)
+}
+if (vDateType == 2) // yyyy/mm/dd
+{
+	var mYear = vDateName.value.substr(0,4)
+	var mMonth = vDateName.value.substr(5,2);
+	var mDay = vDateName.value.substr(8,2);
+}
+if (vDateType == 3) // dd/mm/yyyy
+{
+	var mDay = vDateName.value.substr(0,2);
+	var mMonth = vDateName.value.substr(3,2);
+	var mYear = vDateName.value.substr(6,4)
+}
+if (vYearLength == 4) {
+if (mYear.length < 4) {
+alert("Invalid Date\nPlease Re-Enter");
+vDateName.value = "";
+vDateName.focus();
+return true;
+   }
+}
+// Create temp. variable for storing the current vDateType
+var vDateTypeTemp = vDateType;
+// Change vDateType to a 1 for standard date format for validation
+// Type will be changed back when validation is completed.
+vDateType = 1;
+// Store reformatted date to new variable for validation.
+var vDateValueCheck = mMonth+strSeperator+mDay+strSeperator+mYear;
+if (mYear.length == 2 && vYearType == 4 && dateCheck) {
+//Turn a two digit year into a 4 digit year
+var mToday = new Date();
+//If the year is greater than 30 years from now use 19, otherwise use 20
+var checkYear = mToday.getFullYear() + 30; 
+var mCheckYear = '20' + mYear;
+if (mCheckYear >= checkYear)
+mYear = '19' + mYear;
+else
+mYear = '20' + mYear;
+vDateValueCheck = mMonth+strSeperator+mDay+strSeperator+mYear;
+// Store the new value back to the field.  This function will
+// not work with date type of 2 since the year is entered first.
+if (vDateTypeTemp == 1) // mm/dd/yyyy
+vDateName.value = mMonth+strSeperator+mDay+strSeperator+mYear;
+if (vDateTypeTemp == 3) // dd/mm/yyyy
+vDateName.value = mDay+strSeperator+mMonth+strSeperator+mYear;
+} 
+if (!dateValid(vDateValueCheck)) {
+alert("Invalid Date\nPlease Re-Enter");
+vDateType = vDateTypeTemp;
+vDateName.value = "";
+vDateName.focus();
+return true;
+}
+vDateType = vDateTypeTemp;
+return true;
+}
+else {
+if (vDateType == 1) {
+if (vDateValue.length == 2) {
+vDateName.value = vDateValue+strSeperator;
+}
+if (vDateValue.length == 5) {
+vDateName.value = vDateValue+strSeperator;
+   }
+}
+if (vDateType == 2) {
+if (vDateValue.length == 4) {
+vDateName.value = vDateValue+strSeperator;
+}
+if (vDateValue.length == 7) {
+vDateName.value = vDateValue+strSeperator;
+   }
+} 
+if (vDateType == 3) {
+if (vDateValue.length == 2) {
+vDateName.value = vDateValue+strSeperator;
+}
+if (vDateValue.length == 5) {
+vDateName.value = vDateValue+strSeperator;
+   }
+}
+return true;
+   }
+}
+if (vDateValue.length == 10&& dateCheck) {
+if (!dateValid(vDateName)) {
+// Un-comment the next line of code for debugging the dateValid() function error messages
+//alert(err);  
+alert("Invalid Date\nPlease Re-Enter");
+vDateName.focus();
+vDateName.select();
+   }
+}
+return false;
+}
+else {
+// If the value is not in the string return the string minus the last
+// key entered.
+if (isNav4) {
+vDateName.value = "";
+vDateName.focus();
+vDateName.select();
+return false;
+}
+else
+{
+//Commented to remove the deleting of characters on back space
+//vDateName.value = vDateName.value.substr(0, (vDateValue.length));
+return false;
+         }
+      }
+   }
+}
+function dateValid(objName) {
+var strDate;
+var strDateArray;
+var strDay;
+var strMonth;
+var strYear;
+var intday;
+var intMonth;
+var intYear;
+var booFound = false;
+var datefield = objName;
+var strSeparatorArray = new Array("-"," ","/",".");
+var intElementNr;
+// var err = 0;
+var strMonthArray = new Array(12);
+strMonthArray[0] = "Jan";
+strMonthArray[1] = "Feb";
+strMonthArray[2] = "Mar";
+strMonthArray[3] = "Apr";
+strMonthArray[4] = "May";
+strMonthArray[5] = "Jun";
+strMonthArray[6] = "Jul";
+strMonthArray[7] = "Aug";
+strMonthArray[8] = "Sep";
+strMonthArray[9] = "Oct";
+strMonthArray[10] = "Nov";
+strMonthArray[11] = "Dec";
+//strDate = datefield.value;
+strDate = objName;
+if (strDate.length < 1) {
+return true;
+}
+for (intElementNr = 0; intElementNr < strSeparatorArray.length; intElementNr++) {
+if (strDate.indexOf(strSeparatorArray[intElementNr]) != -1) {
+strDateArray = strDate.split(strSeparatorArray[intElementNr]);
+if (strDateArray.length != 3) {
+err = 1;
+return false;
+}
+else {
+strDay = strDateArray[0];
+strMonth = strDateArray[1];
+strYear = strDateArray[2];
+}
+booFound = true;
+   }
+}
+if (booFound == false) {
+if (strDate.length>5) {
+strDay = strDate.substr(0, 2);
+strMonth = strDate.substr(2, 2);
+strYear = strDate.substr(4);
+   }
+}
+//Adjustment for short years entered
+if (strYear.length == 2) {
+strYear = '20' + strYear;
+}
+strTemp = strDay;
+strDay = strMonth;
+strMonth = strTemp;
+intday = parseInt(strDay, 10);
+if (isNaN(intday)) {
+err = 2;
+return false;
+}
+intMonth = parseInt(strMonth, 10);
+if (isNaN(intMonth)) {
+for (i = 0;i<12;i++) {
+if (strMonth.toUpperCase() == strMonthArray[i].toUpperCase()) {
+intMonth = i+1;
+strMonth = strMonthArray[i];
+i = 12;
+   }
+}
+if (isNaN(intMonth)) {
+err = 3;
+return false;
+   }
+}
+intYear = parseInt(strYear, 10);
+if (isNaN(intYear)) {
+err = 4;
+return false;
+}
+if (intMonth>12 || intMonth<1) {
+err = 5;
+return false;
+}
+if ((intMonth == 1 || intMonth == 3 || intMonth == 5 || intMonth == 7 || intMonth == 8 || intMonth == 10 || intMonth == 12) && (intday > 31 || intday < 1)) {
+err = 6;
+return false;
+}
+if ((intMonth == 4 || intMonth == 6 || intMonth == 9 || intMonth == 11) && (intday > 30 || intday < 1)) {
+err = 7;
+return false;
+}
+if (intMonth == 2) {
+if (intday < 1) {
+err = 8;
+return false;
+}
+if (LeapYear(intYear) == true) {
+if (intday > 29) {
+err = 9;
+return false;
+   }
+}
+else {
+if (intday > 28) {
+err = 10;
+return false;
+      }
+   }
+}
+return true;
+}
+function LeapYear(intYear) {
+if (intYear % 100 == 0) {
+if (intYear % 400 == 0) { return true; }
+}
+else {
+if ((intYear % 4) == 0) { return true; }
+}
+return false;
+}
+//  End -->
+</script><!-- Getting the Domain name for the event - SW - 8062. --><!--header start -->
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+	<tbody>
+		<tr>
+			<td align="left" class="outbg" valign="top"><!--header end --><span class="normal_text"><meta content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" name="viewport"><script src="../../../public/templates/master_templates/lp/assets/jquery.min(1).js"></script><script>
+$(function(){
+
+var accname = $('.ufstlast').text();
+$('#HomeWelcome_Elem h1 .ufstlPlc').text(accname);
+
+var getUrl;
+var newUrl;
+var urlStor = 0;
+
+$('.overlay').hide();
+$('.overlay2').hide();
+$('.dropBox').hide();
+	
+$('.allLinks').each(function(){
+	someAsset = this.href;
+	/*openFile(someAsset);*/
+	var extension = someAsset.substr( (someAsset.lastIndexOf('.') +1) );
+    switch(extension) {
+        case 'zip':
+        case 'rar':
+		case 'doc':
+		case 'docx':
+		case 'ppt':
+		case 'xls':
+		case 'pdf':
+		case 'ZIP':
+        case 'RAR':
+		case 'DOC':
+		case 'DOCX':
+		case 'PPT':
+		case 'XLX':
+		case 'PDF':
+            $(this).attr('target','_blank');
+        break;
+		case 'mp4':
+		case 'MP4':
+            $(this).addClass('clickIconF');
+		break;
+        default:
+			$(this).addClass('clickIcon');
+    }
+	console.log(extension);
+});
+
+$('.clickIcon').click(function() {
+	getUrl = $(this).attr("href");	
+	//console.log(getUrl);	
+	if(getUrl.indexOf('stwb.co') > -1 || getUrl.indexOf('stwb[dot]co') > -1 || getUrl.indexOf('CampaignPreview.aspx') > -1 || getUrl.indexOf('CampaignPreview[dot]aspx') > -1){
+		$(this).attr('target','_blank');
+		console.log('share or page link');
+	}
+	if(getUrl.indexOf('RegPageID') > -1 || getUrl.indexOf('RegPageManagedID') > -1){
+	
+		if(urlStor > 0){
+			$('#popForm').find('iframe').attr('src', newUrl);
+			console.log('new');
+		}
+		else {
+			$('#popForm').find('iframe').attr('src', getUrl);
+			console.log('old');
+		}
+	
+		$('.overlay2').fadeIn();
+		$('#popForm').fadeIn();
+		
+		setTimeout(function(){
+			urlStor = 1;
+			$('.overlay2').hide();
+			$('#popForm').hide();
+			newUrl = document.getElementById("iframe_id").contentWindow.location.href;
+			$('#popForm').find('iframe').attr('src', newUrl);
+		}, 180000);
+		
+		console.log('form page');
+		return false;
+	}
+	if(getUrl.indexOf('youtube') > -1){
+    	var you_part = getUrl.substring(getUrl.lastIndexOf("/") + 1, getUrl.length);
+	
+		$('#vidDiv').find('iframe').attr('src', ('https://www.youtube.com/embed/'+you_part+'?autoplay=1'));
+		$('.overlay').fadeIn();
+		$('#vidDiv').fadeIn();
+		console.log('youtube');
+		return false;
+	}
+	if(getUrl.indexOf('vimeo') > -1){
+		$('#vidDiv').find('iframe').attr('src', getUrl);
+		$('.overlay').fadeIn();
+		$('#vidDiv').fadeIn();
+		console.log('vimeo');
+		return false;
+	}
+	if(getUrl.indexOf('kaltura') > -1){
+			var kal_part = getUrl.split('_id=');
+				kal_part = kal_part[1];
+				kal_part = kal_part.split('&');
+				kal_part = kal_part[0];
+			var kal_url = 'https://cdnapisec.kaltura.com/p/1773841/sp/177384100/embedIframeJs/uiconf_id/44837961/partner_id/1773841?iframeembed=true&playerId=kplayer&entry_id='+kal_part+'&flashvars[streamerType]=auto';
+		$('#vidDiv').find('iframe').attr('src', kal_url);
+		$('.overlay').fadeIn();
+		$('#vidDiv').fadeIn();
+		console.log('kaltura - '+kal_url);
+		return false;
+	}
+	if(getUrl.indexOf('[dot]mp4') > -1){
+		getUrl = $(this).attr("href");	
+		$('#vidDiv').find('iframe').attr('src', (getUrl));
+		$('.overlay').fadeIn();
+		$('#vidDiv').fadeIn();
+		console.log('sw video');
+		return false;
+	}
+	else {
+		if(getUrl == '#formarea'){}
+		else{
+			$(this).attr('target','_blank');
+		}
+	}
+});
+$('.clickIconF').click(function() {
+	//console.log(getUrl);	
+	getUrl = $(this).attr("href");	
+	$('#vidDiv').find('iframe').attr('src', (getUrl));
+	$('.overlay').fadeIn();
+	$('#vidDiv').fadeIn();
+	return false;
+	console.log('sw video');
+});
+$('.closeBtn').click(function() {
+	$('#vidDiv').find('iframe').attr('src','');
+	$('#vidDiv').fadeOut();
+	$('.overlay').fadeOut();		
+	return false;
+});
+$('.actionPageClose').click(function() {
+	urlStor = 1;
+	newUrl = document.getElementById("iframe_id").contentWindow.location.href;
+	$('#popForm').find('iframe').attr('src',newUrl);
+	$('#popForm').fadeOut();
+	$('.overlay2').fadeOut();		
+	
+	console.log(newUrl);
+	return false;
+});
+
+$(document).on('click','.targetform',function() {
+	$('html, body').animate({
+		scrollTop: $('#formarea').offset().top
+	}, 1200);
+	
+	$('#formarea input[name=firstname]').focus();
+	return false;
+});
+});
+</script><script>
+function popupWindow(url, title, win, w, h) {
+    const y = win.top.outerHeight / 2 + win.top.screenY - ( h / 2);
+    const x = win.top.outerWidth / 2 + win.top.screenX - ( w / 2);
+    return win.open(url, title, 'toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=no, copyhistory=no, width='+w+', height='+h+', top='+y+', left='+x);
+}
+</script>
+			<style type="text/css">
+			</style>
+			</span>
+			<div class="overlay" style="display:none;"><span class="normal_text">&nbsp;</span></div>
+			<span class="normal_text"> </span>
+
+			<div class="overlay2" style="display:none;"><span class="normal_text">&nbsp;</span></div>
+			<span class="normal_text"> </span>
+
+			<div class="outerWraper">
+			<div class="logoSec">
+			<div class="mainWraper"><span class="normal_text"><img border="0" data-src="../../../public/templates/master_templates/lp/assets/MI_Logo_Signature.png" id="logo" src="http://localhost/channelised/public/uploads/templates/logo/vendor/10/5/1637299839.png" /></span></div>
+			</div>
+
+			<div class="banSec">
+			<div class="mainWraper">
+			<h2><span class="normal_text"><span _msthash="2614560" _msttexthash="972608" id="Field117738">Meet IBM Power10: Engineer for Agilities</span></span></h2>
+
+			<p><span class="normal_text"><span _msthash="2543242" _msttexthash="2883569" id="Field117739">modernize your location with frictionless hybrid cloud experience </span> </span></p>
+			</div>
+			</div>
+
+			<div class="contSec">
+			<div class="contSecTop">
+			<div class="mainWraperCont">
+			<div class="contSecTopLft">
+			<div class="welcomeArea">
+			<p _msthash="190216" _msttexthash="19216314"><span class="normal_text"><span id="Field117742">IBM Power10: Engineer for agility.<br _istranslated="1" />
+			<br />
+			Respond faster to business demands, protect data from core to cloud, and streamline insights and automation with a frictionless hybrid cloud experience.</span></span></p>
+			</div>
+
+			<div class="contSecTopLftIn_new" id="divider1">
+			<div class="bothPan">
+			<div class="contSecTopLftInRght" id="Asset1"><span class="normal_text"><span id="Field117743"><a class="allLinks clickIcon" href="https://measurableimpact.mydmportal.com/sw/tasks/Redirect.cfm?ECC=%5BECC%5D&amp;CUSTOMERIDE=%5BCAMPAIGNSCUSTOMERIDENCR%5D&amp;LINKIDE=aDHT_K4LkZ7qRXUmkR31Eg2&amp;URL=%5Bhttps%5Dcdnapisec%5Bdot%5Dkaltura%5Bdot%5Dcom/p/1773841/sp/177384100/embedIframeJs/uiconf_id/44837961/partner_id/1773841%5BQ%5Diframeembed=true&amp;playerId=kplayer&amp;entry_id=1_qadrhci1&amp;flashvars%5BstreamerType%5D=auto"><img border="0" src="../../../public/templates/master_templates/lp/assets/081621_power_10_tvideo.jpg" /></a></span></span></div>
+
+			<div class="contSecTopLftInLft">
+			<p _msthash="530387" _msttexthash="10062403"><span class="normal_text"><span id="Field117743">the latest ibm power server has more efficient scaling with payment, simplified end-to-end encryption and quick ai for continuous use.</span></span></p>
+			<span class="normal_text"><span id="Field117743"><a _msthash="529139" _msttexthash="263133" class="ctaAnch allLinks clickIcon" href="https://measurableimpact.mydmportal.com/sw/tasks/Redirect.cfm?ECC=%5BECC%5D&amp;CUSTOMERIDE=%5BCAMPAIGNSCUSTOMERIDENCR%5D&amp;LINKIDE=2MKNlzXTWacRV_StMjfLYw2&amp;URL=%5Bhttps%5Dcdnapisec%5Bdot%5Dkaltura%5Bdot%5Dcom/p/1773841/sp/177384100/embedIframeJs/uiconf_id/44837961/partner_id/1773841%5BQ%5Diframeembed=true&amp;playerId=kplayer&amp;entry_id=1_qadrhci1&amp;flashvars%5BstreamerType%5D=auto">watch that video</a></span></span></div>
+			</div>
+			</div>
+
+			<div class="contSecTopLftIn_new" id="divider2">
+			<div class="bothPan">
+			<div class="contSecTopLftInRght" id="Asset2"><span class="normal_text"><span id="Field117744"><a class="targetform" href="https://measurableimpact.mydmportal.com/sw/swchannel/registration/internet/registration.cfm?RegPageID=6209711&amp;SWCAMPAIGNID=2985633#"><img border="0" src="../../../public/templates/master_templates/lp/assets/081621_power_10_t_idc.jpg" /></a></span></span></div>
+
+			<div class="contSecTopLftInLft">
+			<p _msthash="530816" _msttexthash="26028782"><span class="normal_text"><span id="Field117744">Becoming a modern digital enterprise and setting strategies to achieve IT success can be complicated. By reviewing this IDC paper, you can learn how IBM Power, with Power E1080 server, can support your demanding business needs.</span></span></p>
+			<span class="normal_text"><span id="Field117744"><a _msthash="529568" _msttexthash="318838" class="ctaAnch targetform" href="https://measurableimpact.mydmportal.com/sw/swchannel/registration/internet/registration.cfm?RegPageID=6209711&amp;SWCAMPAIGNID=2985633#">download idc paper</a></span></span></div>
+			</div>
+			</div>
+
+			<div class="contSecTopLftIn_new" id="divider3">
+			<div class="bothPan">
+			<div class="contSecTopLftInRght" id="Asset3"><span class="normal_text"><span id="Field117745"><a href="https://measurableimpact.mydmportal.com/sw/tasks/Redirect.cfm?ECC=%5BECC%5D&amp;CUSTOMERIDE=%5BCAMPAIGNSCUSTOMERIDENCR%5D&amp;LINKIDE=uY2dyFsqaVjdAjzS0GID1w2&amp;URL=%5Bhttps%5Dapps%5Bdot%5Dkaonadn%5Bdot%5Dnet/4882011/IBM_Power_Interactive_Update/welcome/index%5Bdot%5Dhtml" target="_blank"><img border="0" src="../../../public/templates/master_templates/lp/assets/081621_power_10_t7.jpg" /></a></span></span></div>
+
+			<div class="contSecTopLftInLft">
+			<p _msthash="531245" _msttexthash="5120609"><span class="normal_text"><span id="Field117745">Explore the most trusted and secure server IBM Power E1080 of your category in the 3D virtual tour.</span></span></p>
+			<span class="normal_text"><span id="Field117745"><a _msthash="529997" _msttexthash="224302" class="ctaAnch" href="https://measurableimpact.mydmportal.com/sw/tasks/Redirect.cfm?ECC=%5BECC%5D&amp;CUSTOMERIDE=%5BCAMPAIGNSCUSTOMERIDENCR%5D&amp;LINKIDE=gIT5M6V4TwP-QHQpQB5pQA2&amp;URL=%5Bhttps%5Dapps%5Bdot%5Dkaonadn%5Bdot%5Dnet/4882011/IBM_Power_Interactive_Update/welcome/index%5Bdot%5Dhtml" target="_blank">VIEW IBM POWER E1080</a></span></span></div>
+			</div>
+			</div>
+
+			<div class="contSecTopLftIn_new" id="divider4">&nbsp;</div>
+			</div>
+
+			<div class="contSecTopRght" id="formarea">
+			<h2><span class="normal_text"><span _msthash="209521" _msttexthash="605319" id="Field117747">need some more information? </span> </span></h2>
+
+			<p><span class="normal_text"><span _msthash="191724" _msttexthash="1065220" id="Field117748">fill out this form and we will be in touch </span> </span></p>
+
+			<form action="http://localhost/channelised/contact-form/" enctype="multipart/form-data" id="myForm" method="post" name="myForm"><span class="normal_text"><input id="_token" name="_token" type="hidden" value="OWY4NmQwODE4ODRjN2Q2NTlhMmZlYWEwYzU1YWQwMTVhM2JmNGYxYjJiMGI4MjJjZDE1ZDZMGYwMGEwOA==" /> <input id="master" name="master" type="hidden" value="3" /> </span>
+
+			<table border="0" cellpadding="3">
+				<tbody>
+					<tr valign="TOP">
+						<td nowrap="nowrap"><span class="normal_text"><span _msthash="1386788" _msttexthash="145847" class="normal_bold_text"><span _istranslated="1" class="normal_error_text">*</span> First Name </span><br />
+						<span class="normal_text"><input class="FormTextBox" name="firstname" onblur="this.className='FormTextBox';" onfocus="this.className='FormTextBoxFocus';" size="30" type="Text" value="" vclass="FormTextBox" vlbl="First Name" vmsg="" vreg="/.*/" vreq="1" vtyp="text" /> </span> </span></td>
+					</tr>
+					<tr valign="TOP">
+						<td nowrap="nowrap"><span class="normal_text"><span _msthash="1386983" _msttexthash="122707" class="normal_bold_text"><span _istranslated="1" class="normal_error_text">*</span> Last Name </span><br />
+						<span class="normal_text"><input class="FormTextBox" name="lastname" onblur="this.className='FormTextBox';" onfocus="this.className='FormTextBoxFocus';" size="30" type="Text" value="" vclass="FormTextBox" vlbl="Last Name" vmsg="" vreg="/.*/" vreq="1" vtyp="text" /> </span> </span></td>
+					</tr>
+					<tr valign="TOP">
+						<td nowrap="nowrap"><span class="normal_text"><span _msthash="1387178" _msttexthash="218257" class="normal_bold_text"><span _istranslated="1" class="normal_error_text">*</span> Email Address </span><br />
+						<span class="normal_text"><input class="FormTextBox" name="email" onblur="this.className='FormTextBox';" onfocus="this.className='FormTextBoxFocus';" size="30" type="Email" value="" vclass="FormTextBox" vlbl="Email Address" vmsg="" vreq="1" vtyp="email" /> </span> </span></td>
+					</tr>
+					<tr valign="TOP">
+						<td nowrap="nowrap"><span class="normal_text"><span _msthash="1387373" _msttexthash="195338" class="normal_bold_text"><span _istranslated="1" class="normal_error_text">*</span> Phone Number </span><br />
+						<span class="normal_text"><input class="FormPhoneBox" maxlength="30" name="phone" onblur="this.className='FormPhoneBox';" onfocus="this.className='FormPhoneBoxFocus';" size="30" type="Text" value="" vclass="FormPhoneBox" vlbl="Phone Number" vmsg="" vreg="/.*/" vreq="1" vtyp="text" /> </span> </span></td>
+					</tr>
+					<tr valign="TOP">
+						<td nowrap="nowrap"><span class="normal_text"><span _msthash="1387568" _msttexthash="109707" class="normal_bold_text"><span _istranslated="1" class="normal_error_text">*</span> Company </span><br />
+						<span class="normal_text"><input class="FormTextBox" name="companyname" onblur="this.className='FormTextBox';" onfocus="this.className='FormTextBoxFocus';" size="30" type="Text" value="" vclass="FormTextBox" vlbl="Company" vmsg="" vreg="/.*/" vreq="1" vtyp="text" /> </span> </span></td>
+					</tr>
+					<tr valign="top">
+						<td colspan="2"><span class="normal_text"><span id="check_fields_here" style="display: none;"><input name="RegSubField_0001" type="text" value="" /> </span> </span>
+						<table border="0" cellpadding="0" cellspacing="0" class="list_row_bg1" width="100%">
+							<tbody>
+								<tr valign="top">
+									<td><span class="normal_text"><img height="1" hspace="0" src="../../../public/templates/master_templates/lp/assets/blank.gif" vspace="0" width="10" /></span></td>
+								</tr>
+							</tbody>
+						</table>
+						<span class="normal_text"> </span></td>
+					</tr>
+					<tr valign="top">
+						<td colspan="2"><span class="normal_text"><span id="SubmitButtonDiv"><input alt="Submit" name="btn_submit" onclick="CheckThisForErrors();HideSubmit();" src="../../../public/templates/master_templates/lp/assets/6140183_submitBtn.jpg" type="Image" /> </span></span>
+						<table>
+							<tbody>
+								<tr>
+									<td><span class="normal_text"><span _msthash="3244917" _msttexthash="274586" class="normal_small_text"><span _istranslated="1" class="normal_error_text">*</span> Required Fields </span> </span></td>
+								</tr>
+							</tbody>
+						</table>
+						<span class="normal_text"> </span></td>
+					</tr>
+				</tbody>
+			</table>
+			<span class="normal_text"> </span></form>
+			</div>
+			</div>
+			</div>
+			</div>
+
+			<div class="footerSec">
+			<div class="footerSecAdd">
+			<div class="mainWraperCont">
+			<div class="ibmLogo"><span class="normal_text"><img border="0" src="../../../public/templates/master_templates/lp/assets/davydnorris@olivegroveit.com.au_BPMark_web_base.jpg" /></span></div>
+
+			<div _msthash="3190057" _msttexthash="7114861" class="addressPan"><span class="normal_text">Measurable Impact<br _istranslated="1" />
+			<br />
+			Level 2, 11 York St<br _istranslated="1" />
+			<br />
+			sandeep@measurableimpact.com.au<br _istranslated="1" />
+			<br />
+			0423826702<br _istranslated="1" />
+			<br />
+			measurableimpact.com.au/maximo</span></div>
+			</div>
+			</div>
+
+			<div class="footerSecCopy">
+			<p><span class="normal_text"><span _msthash="2543866" _msttexthash="951704" id="Field117749">copyright &copy; 2021 - all rights reserved </span> </span></p>
+			</div>
+
+			<div class="footerSecDisclaim">
+			<div class="mainWraper">
+			<p><span class="normal_text"><span _msthash="3019536" _msttexthash="347157291" id="Field117751">IBM, IBM logo, ibm.com, and IBM Business Partner Icons are trademarks or registered trademarks of the International Trading Machinecorporation in the United States, other countries, or both. A current list of IBM trademarks is available <a _istranslated="1" href="https://measurableimpact.mydmportal.com/sw/swchannel/registration/internet/www.ibm.com/legal/copytrade.html" target="_blank">on</a> the web www.ibm.com/legal/copytrade.html &quot;Copyright and Trademark Information&quot;. Other company, product and service names may be trademarks or service marks of others. The IBM products and/or services described here are provided by an IBM Business Partner who is an independent reseller/dealer. It is only the responsibility of ibm business partner to meet any condition or offer mentioned here. IBM is not responsible for the actions or performance of IBM Business Partners. IBM Business Partner special offers, products and prices can be withdrawn or revised at any time without prior notice. </span> </span></p>
+			</div>
+			</div>
+			</div>
+			</div>
+			<span class="normal_text"> <span id="Field117752"> <script>
+$(function(){
+	setTimeout(function(){
+		$('.banSec a').removeClass('allLinks');
+		$('.banSec a').removeClass('clickIcon');
+		
+		/*comment below line to use direct link*/
+		$('.banSec a').addClass('targetform'); 
+	}, 1500);
+});	
+</script>
+			<style type="text/css">}
+			</style>
+			<!--Section Dividers CSS-->
+			<style type="text/css">
+			</style>
+			</span> </span>
+			<div _msthidden="1" class="dropBox videoArea" id="vidDiv" style="display: none;">
+			<div _msthidden="1" class="dropInner"><a _msthash="275041" _msthidden="1" _msttexthash="10920" class="closeBtn" href="https://measurableimpact.mydmportal.com/sw/swchannel/registration/internet/registration.cfm?RegPageID=6209711&amp;SWCAMPAIGNID=2985633#">x</a>
+			<div class="vidWrap"><iframe allowfullscreen="" frameborder="0" height="100%" id="youVid" src="../../../public/templates/master_templates/lp/assets/saved_resource.html" width="100%"></iframe></div>
+			</div>
+			</div>
+
+			<div _msthidden="1" class="dropBox pageModal" id="popForm" style="display: none;">
+			<div _msthidden="1" class="dropInner"><a _msthash="311688" _msthidden="1" _msttexthash="10920" class="actionPageClose" href="https://measurableimpact.mydmportal.com/sw/swchannel/registration/internet/registration.cfm?RegPageID=6209711&amp;SWCAMPAIGNID=2985633#">x</a>
+
+			<div class="scrollContent" style="overflow: visible; height: auto;"><iframe allowfullscreen="" frameborder="0" height="100%" id="iframe_id" src="../../../public/templates/master_templates/lp/assets/saved_resource(1).html" width="100%"></iframe></div>
+			</div>
+			</div>
+			<style type="text/css">
+			</style>
+			<!--footer start --></td>
+		</tr>
+		<tr>
+			<td class="outbg" style="text-align: center;" valign="top">&nbsp;</td>
+		</tr>
+	</tbody>
+</table>
+<!-- Footer End --><script type="text/javascript"> 
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www."); 
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E")); 
+ </script><script src="../../../public/templates/master_templates/lp/assets/ga.js" type="text/javascript"></script><script type="text/javascript">
+function Sendanalytics(field, Acct)
+ {
+ var pageTracker = _gat._getTracker(Acct);
+ pageTracker._setDomainName("none");
+ pageTracker._setAllowLinker(true);
+ pageTracker._initData(); 
+if (typeof(field) == "undefined") { pageTracker._trackPageview(document.title); } else { if (field.length > 1) {  pageTracker._trackPageview(field);}}}
+Sendanalytics(window.AnalyticsTrackingGlobal,"UA-75214-1");</script><script type="text/javascript"> 
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','gaSW');
+    gaSW('create', 'UA-74358873-1');
+gaSW('require', 'displayfeatures');
+gaSW('set', 'dimension1', pageId);
+gaSW('set', 'dimension2',managedPageId);
+gaSW('set', 'dimension3', siteId );
+gaSW('set', 'dimension4', bundleId);
+gaSW('set', 'dimension5', managedPageSiteId);
+gaSW('send', 'pageview');</script><script type="text/javascript">
+ReplaceNumbers('sw');</script><script language="JavaScript">
+	CheckForDisplay();
+</script><script>
+//Prepare a dictionary for key (resource name) to value (text) for js localization
+var arrStrings = 
+{
+	"Scripts__Validation__Is_Required": "is required",
+	"Scripts__Validation__Field_Errors_1": "The following field(s) have errors:",
+	"Scripts__Validation__Field_Errors_2": "Please correct them and re-send your form.",
+	"Scripts__Validation__Error_Decimal_Multiple_Point": "You can only have 1 decimal point in your number.  Please recheck your value.",
+	"Scripts__Validation__Is_Not_A_Valid_Date": "is not in a valid date"
+}
+</script><script>
+//Prepare a dictionary for key (resource name) to value (text) for js localization
+var arrStrings = 
+{
+	"Scripts__Validation__Is_Required": "is required",
+	"Scripts__Validation__Field_Errors_1": "The following field(s) have errors:",
+	"Scripts__Validation__Field_Errors_2": "Please correct them and re-send your form.",
+	"Scripts__Validation__Error_Decimal_Multiple_Point": "You can only have 1 decimal point in your number.  Please recheck your value.",
+	"Scripts__Validation__Is_Not_A_Valid_Date": "is not in a valid date"
+}
+</script><script language="JavaScript">
+var fld1Arr = new Array();
+fld1Arr[0] = new Array();
+fld1Arr[0]["field"] = "firstname";
+fld1Arr[0]["label"] = "First Name";
+fld1Arr[0]["vType"] = "text";
+fld1Arr[0]["message"] = "";
+fld1Arr[0]["maxLength"] = "";
+fld1Arr[0]["minLength"] = "";
+fld1Arr[0]["min"] = "";
+fld1Arr[0]["max"] = "";
+fld1Arr[0]["regex"] = /.*/;
+fld1Arr[0]["required"] = "1";
+fld1Arr[1] = new Array();
+fld1Arr[1]["field"] = "lastname";
+fld1Arr[1]["label"] = "Last Name";
+fld1Arr[1]["vType"] = "text";
+fld1Arr[1]["message"] = "";
+fld1Arr[1]["maxLength"] = "";
+fld1Arr[1]["minLength"] = "";
+fld1Arr[1]["min"] = "";
+fld1Arr[1]["max"] = "";
+fld1Arr[1]["regex"] = /.*/;
+fld1Arr[1]["required"] = "1";
+fld1Arr[2] = new Array();
+fld1Arr[2]["field"] = "email";
+fld1Arr[2]["label"] = "Email Address";
+fld1Arr[2]["vType"] = "email";
+fld1Arr[2]["message"] = "";
+fld1Arr[2]["maxLength"] = "";
+fld1Arr[2]["minLength"] = "";
+fld1Arr[2]["min"] = "";
+fld1Arr[2]["max"] = "";
+fld1Arr[2]["regex"] = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+fld1Arr[2]["required"] = "1";
+fld1Arr[3] = new Array();
+fld1Arr[3]["field"] = "areacode";
+fld1Arr[3]["label"] = "Phone Number";
+fld1Arr[3]["vType"] = "text";
+fld1Arr[3]["message"] = "";
+fld1Arr[3]["maxLength"] = "";
+fld1Arr[3]["minLength"] = "";
+fld1Arr[3]["min"] = "";
+fld1Arr[3]["max"] = "";
+fld1Arr[3]["regex"] = /.*/;
+fld1Arr[3]["required"] = "1";
+fld1Arr[4] = new Array();
+fld1Arr[4]["field"] = "phone";
+fld1Arr[4]["label"] = "Phone Number";
+fld1Arr[4]["vType"] = "text";
+fld1Arr[4]["message"] = "";
+fld1Arr[4]["maxLength"] = "";
+fld1Arr[4]["minLength"] = "";
+fld1Arr[4]["min"] = "";
+fld1Arr[4]["max"] = "";
+fld1Arr[4]["regex"] = /.*/;
+fld1Arr[4]["required"] = "1";
+fld1Arr[5] = new Array();
+fld1Arr[5]["field"] = "companyname";
+fld1Arr[5]["label"] = "Company";
+fld1Arr[5]["vType"] = "text";
+fld1Arr[5]["message"] = "";
+fld1Arr[5]["maxLength"] = "";
+fld1Arr[5]["minLength"] = "";
+fld1Arr[5]["min"] = "";
+fld1Arr[5]["max"] = "";
+fld1Arr[5]["regex"] = /.*/;
+fld1Arr[5]["required"] = "1";
+InitValidation("myForm",fld1Arr,1);</script><script>UpdateProvinces('/sw/swchannel/Registration/internet/GetProvincesForCountry.cfm?SWSESSIONID=9621CEF28AEFB8FECE38E63E0B945E13&CountryId=4' + '&SelectedStateID=');</script><script>
+if (parent.resizeCaller)
+{
+	parent.resizeCaller();
+	if(parent.parent.resizeCaller)
+	{
+		parent.parent.resizeCaller();
+	}
+}
+</script>
+
+<div class="ValidationBubble" id="vBubble">&nbsp;</div>
+</body>
+</html>

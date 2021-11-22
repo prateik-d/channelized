@@ -241,7 +241,7 @@
 	display: inline-block;
 	text-decoration: none;
 	color: #0769fe;
-	background: url(../../../templates/lp/assets/arrow.png) no-repeat 100% 8px;
+	background: url(../../../master_templates/lp/assets/arrow.png) no-repeat 100% 8px;
 	width: auto;
 	font-family: 'IBM Plex Sans', sans-serif;
 	font-size: 18px;
@@ -468,7 +468,7 @@
  width:90%!important;
 }
 .outerWraper a.ctaAnch {
- background: url(../../../templates/lp/assets/arrow.png) no-repeat 100% 9px;
+ background: url(../../../master_templates/lp/assets/arrow.png) no-repeat 100% 9px;
  width: 190px;
 }
 .outerWraper .contSecTopLftInRght img {
@@ -590,7 +590,7 @@ top:15px;
 .outerWraper .banSec {
     padding: 75px 0 92px;
     margin: 0;
-    background: url(../../../templates/lp/assets/081621_power_10_banner_lp.jpg) no-repeat 50% 0!important;
+    background: url(../../../master_templates/lp/assets/081621_power_10_banner_lp.jpg) no-repeat 50% 0!important;
 
 
 }
